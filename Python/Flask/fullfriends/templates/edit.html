@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{one_friend['id']}}</p>
+    <form class="" action="/friends/{{one_friend['id']}}" method="post">
+        First Name: <input type="text" name="first_name" value="{{ one_friend['first_name'] }}"> <br>
+        Last Name: <input type="text" name="last_name" value="{{ one_friend['last_name'] }}"><br>
+        Email: <input type="text" name="email" value="{{ one_friend['email'] }}">
+        <input type="submit" name="" value="Update">
+    </form>
+</body>
+</html>

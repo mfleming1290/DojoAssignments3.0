@@ -1,0 +1,161 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0px auto;
+}
+
+header {
+    background-color: #F6F6F6;
+    padding: 6px;
+}
+
+
+
+header h1 {
+    display: inline-block;
+    font-family: Comic Sans MS;
+
+}
+
+header p {
+    display: inline-block;
+    margin-left: 400px;
+    font-family: Helvetica;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+
+
+}
+
+#wrapper {
+    background-color: #46333B;
+    padding: 20px;
+}
+
+#wrapper img {
+    height: 250px;
+    border: 5px solid #BFBFBF;
+
+}
+
+#me {
+    margin-left: 7px;
+}
+
+#about {
+    display: inline-block;
+    border: 1px solid black;
+    width: 490px;
+    height: 250px;
+    vertical-align: top;
+    background-color: #EBE3EB;
+    padding-bottom: 10px;
+    margin-left: 27px;
+}
+
+#about h3 {
+    background: linear-gradient(#ACABB1, #888694, #ACABB1);
+    color: white;
+    padding: 10px;
+}
+
+#about p {
+    padding: 10px;
+}
+
+#about a {
+    color: black;
+}
+
+#wrapper .content {
+    background-color: #E4D9E3;
+    display: inline-block;
+    vertical-align: top;
+    width: 290px;
+    height: 580px;
+    margin: 20px 8px;
+
+
+}
+
+.content h3 {
+    color: white;
+    background: linear-gradient(#ACABB1, #888694, #ACABB1);
+    padding: 5px;
+
+}
+
+.content h4 {
+    color: white;
+    background: linear-gradient(#ACABB1, #888694, #ACABB1);
+    padding: 5px;
+}
+
+.content p {
+    padding: 8px;
+}
+
+.content .left {
+    margin-top: 60px;
+}
+
+.content .middle {
+    margin-top: 40px;
+}
+
+#wrapper .content img {
+    width: 290px;
+    height: auto;
+    border: none;
+
+
+}
+
+#wrapper .content .links {
+    padding: 10px;
+}
+
+#wrapper .content .links img  {
+    height: 40px;
+    width: auto;
+    border: none;
+    padding: 5px;
+}
+
+.button {
+    background-color: #407D61;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 100px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+
+footer {
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 10px;
+
+}
+
+footer a {
+    color: black;
+}
+
+ footer img {
+    height: 20px;
+    width: auto;
+    border: none;
+}
+
+footer p {
+    padding-bottom: 10px;
+}

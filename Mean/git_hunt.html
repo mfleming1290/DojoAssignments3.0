@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript">
+
+        $(document).ready(
+            function(){
+                $('button').click(function(){
+                    $.get("https://api.github.com/users/mfleming1290", displayName)
+                    console.log("working");
+                });
+                function displayName(data) {
+                    if(data.login){
+                        $('body').append("<p>"+data.login+"</p>");
+                    }
+                }
+            }
+            );
+
+        </script>
+    </head>
+    <body>
+        <button type="button" name="button">get api</button>
+    </body>
+</html>

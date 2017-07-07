@@ -1,0 +1,14 @@
+#one, #two, #three, #four {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    height: 150px;
+    width: 180px;
+}
+
+#activities {
+max-height: 200px;
+overflow-y: scroll;
+border: 1px solid black;
+}

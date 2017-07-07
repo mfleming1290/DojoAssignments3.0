@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    {% if 'new_user_info' in session %}
+    <h1>You are successful!!</h1>
+    <h1>Welcome to the Dark Side {{session['new_user_info']['first_name']}}!!!</h1>
+    {% endif %}
+    {% if 'user_info' in session %}
+    <h1>Welcome back, the force is strong with you {{session['user_info']['first_name']}}!!!</h1>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</div>
+</body>
+</html>

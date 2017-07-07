@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen" type='text/css'>
+    #box {
+        border: 1px solid black;
+        display: inline-block;
+        margin: 0px auto;
+        padding: 20px;
+    }
+    .flashes {
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Register:</h1>
+        <form class="" action="/register" method="post">
+            <label for="">Email:</label><br>
+            <input type="text" name="email" value=""><br>
+            <label for="">First Name: </label><br>
+            <input type="text" name="first_name" value=""><br>
+            <label for="">Last Name: </label><br>
+            <input type="text" name="last_name" value=""><br>
+            <label for="">Password:</label><br>
+            <input type="text" name="password" value=""><br>
+            <label for="">Confirm Password: </label><br>
+            <input type="text" name="confirm_password" value=""><br>
+            <input type="submit" name="" value="Submit">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, messages in messages %}
+                    <li class='{{error}}'> {{messages}}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

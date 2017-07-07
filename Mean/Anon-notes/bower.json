@@ -1,0 +1,17 @@
+{
+  "name": "ninjaDash",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "matt <matthewjamesfleming@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mfleming1290/DojoAssignments-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

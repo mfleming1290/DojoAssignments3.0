@@ -1,0 +1,25 @@
+<div id="add">
+    <form ng-submit='addPlayer()' name=playerForm>
+        <label for="" >First Name: </label><br>
+        <input type='text' ng-model='newPlayer.name' minlength='4' required><br>
+        <input type='submit' value='Add Player'>
+    </form>
+</div>
+<div ng-messages="playerForm.name.$error">
+    <p ng-message="minlength">The player name is too short.</p>
+    <p ng-message="required">The player name is required.</p>
+</div>
+<div id="list">
+   <div>
+       <table>
+           <tr>
+               <th>Name</th>
+               <th>Actions</th>
+           </tr>
+           <tr ng-repeat="player in players track by $index">
+               <td>{{player.name}}</td>
+               <td><span ng-show="player.name"><button type="button" ng-click = 'deletePlayer($index)'>Delete Player</button></span></td>
+            </tr>
+       </table>
+   </div>
+</div>

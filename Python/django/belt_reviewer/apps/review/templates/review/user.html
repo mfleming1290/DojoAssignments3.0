@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'review/css/userstyle.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <a id="home" href="{% url 'review:index' %}">Home</a>
+            <a id="add" href="{% url 'review:add' %}">Add a Book and Review</a>
+            <a id="logout" href="{% url 'log:logout' %}" id="logout">Log Out</a>
+        </header>
+        <h3>User allias: {{user.first_name}}</h3>
+        <h3>Name: {{user.first_name}} {{user.last_name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Total Reviews: {{user.user_reviews.all.count}}</h3>
+
+        <h3>Posted Reviews on the following books: </h3>
+        {% for review in review %}
+            {% for book in book %}
+                {% if review.user_review == user and review.book_review == book %}
+                    <p><a href="{% url 'review:book' book.id %}">{{book.title}}</a></p>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </body>
+</html>

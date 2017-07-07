@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>pokemon</title>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+         <script type="text/javascript">
+             $(document).ready(function() {
+
+                 function pokemon() {
+                     for (var i = 1; i < 151; i++) {
+                         $('#pokemon').append('<img id = ' + i + '  src="http://pokeapi.co/media/img/' + i + '.png">')
+                     }
+                 }
+
+                 $('button').click(function() {
+                     pokemon();
+                 })
+             })
+         </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Click to see all 151 pokemon!</h1>
+            <button type="button" name="Pokemon">Click me!</button>
+        </div>
+        <div id="pokemon">
+
+        </div>
+    </body>
+</html>

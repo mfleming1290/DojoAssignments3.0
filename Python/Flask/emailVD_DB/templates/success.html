@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page</title>
+    <style media="screen" type='text/css'>
+        body{
+        width: 970px;
+        margin: 0px auto;
+       }
+        #box {
+            background-color: green;
+            height: 50px;
+            width: 500px;
+            border: 1px solid black;
+            color: black;
+            font-size: 24px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="box">The email address you entered {{session['email'] }} is a VALID email address! Thank you!</p>
+  <h1>Email Addresses Entered:</h1>
+  {% for emails in all_emails: %}
+      <p>{{ emails['email'] }} {{ emails['created_at'] }}</p>
+  {% endfor %}
+</body>
+</html>

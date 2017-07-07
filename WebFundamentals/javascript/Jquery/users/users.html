@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+                $(document).ready(function() {
+                    $('form').submit(function(){
+                    var value = $('#fname').val();
+                    var value2 = $('#lname').val();
+                    var value3 = $('#email').val();
+                    var value4 = $('#contact').val();
+                    $('#one').append("<tr> <td>" + value + "</td> </tr>");
+                    $('#two').append("<tr> <td>" + value2 + "</td> </tr>");
+                    $('#three').append("<tr> <td>" + value3 + "</td> </tr>");
+                    $('#four').append("<tr> <td>" + value4 + "</td> </tr>");
+                            return false;
+                                });
+                    });
+    </script>
+</head>
+<body>
+            <table style="border: 2px solid black">
+                <thead>
+                    <tr>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Email</th>
+                      <th>Contact #</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr id = "row">
+                        <td id="one"></td>
+                        <td id="two"></td>
+                        <td id="three"></td>
+                        <td id="four"></td>
+                    </tr>
+                </tbody>
+                </table>
+                    <h1 style="border-bottom: 2px solid black">Add User</h1>
+                    <form action="/action_page.php" method="get">
+                    First name: <input type="text" name="fname" id="fname"><br>
+                    Last name: <input type="text" name="lname" id="lname"><br>
+                    Email: <input type="text" name="email" id="email" style="margin-left: 28px;"><br>
+                    Contact#: <input type="text" name="contact" id="contact" style="margin-left: 9px;"><br>
+                    <input type="submit" value="Submit">
+                </form>
+                
+</body>
+</html>

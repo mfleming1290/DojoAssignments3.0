@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>pokemon</title>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+         <script type="text/javascript">
+             $(document).ready(function() {
+                 function pokemon() {
+                     for (var i = 1; i < 151; i++) {
+                         $('#pokemon').append('<img id = ' + i + '  src="http://pokeapi.co/media/img/' + i + '.png">')
+                     }
+                 }
+                     pokemon();
+
+             })
+
+             $(document).on('click', 'img', function () {
+                     var id = ($(this).attr('id'));
+
+             $.get("http://pokeapi.co/api/v2/pokemon/" + id + "/", function(res) {
+                 var html_str = "";
+                 html_str += '<h1>' + res.name + '</h1>'
+                 html_str += '<img src="http://pokeapi.co/media/img/' + id + '.png">'
+                 html_str += "<h4>Types</h4>";
+                 html_str += "<ul>";
+                 for(var x = 0; x < res.types.length; x++) {
+                     html_str += "<li>" + res.types[x].type.name + "</li>";
+                 }
+                 html_str += "</ul>";
+                 html_str += "<h4>Height</h4>"
+                 html_str += "<p>" + res.height + "</p>"
+                 html_str += "<h4>Weight</h4>"
+                 html_str += "<p>" + res.weight + "</p>"
+                      $("#pokedex").html(html_str);
+
+             }, "json");
+
+              });
+
+
+         </script>
+         <style type="text/css">
+             *{
+                font-family: sans-serif;
+             }
+             body {
+                 width: 970px;
+             }
+             div {
+                 display: inline-block;
+             }
+
+             #pokemon {
+                 width: 600px;
+             }
+
+             #pokedex {
+                 border: 10px solid red;
+                 height: 500px;
+                 width: 300px;
+                 vertical-align: top;
+                 position: fixed;
+             }
+
+
+         </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Click to see all 151 pokemon!</h1>
+        </div>
+        <div id="pokemon">
+
+        </div>
+        <div id="pokedex">
+
+        </div>
+    </body>
+</html>

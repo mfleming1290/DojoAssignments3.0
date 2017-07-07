@@ -1,0 +1,46 @@
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+#star{
+    height: 15px;
+    width: 100px;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+#first {
+    margin-left: 200px;
+}
+
+#second {
+    padding-left: 10px;
+}
+
+#book {
+    height: auto;
+    width: 400px;
+}
+
+#book p {
+    margin-left: 20px;
+}
+
+#reviews {
+    display: inline-block;
+}
+
+#right {
+    vertical-align: top;
+    display: inline-block;
+
+}
+
+#list {
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid black;
+}

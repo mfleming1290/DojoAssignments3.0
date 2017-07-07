@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <style media="screen" type="text/css">
+            body {
+                width: 970px;
+                margin: 0px auto;
+            }
+            div {
+                display: inline-block;
+                border: 1px solid black;
+            }
+            a {
+                display: inline-block;
+            }
+            p {
+
+                height: 150px;
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome {{request.session.name}}</h1>
+            <h1>Hi, I'm Matthew Fleming</h1>
+            <h3>Welcom to My Portfolio</h3>
+        </header>
+            <div id="projects">
+                <a href="/projects">Projects</a>
+                <p>I have a variety of projects both personal and contract. They are built
+                They are vuilt using Python, Swift, and Javascript.</p>
+            </div>
+            <div id="about">
+                <a href="/about">About Me</a>
+                <p>A little about my background and why I do what i do.</p>
+            </div>
+            <div id="test">
+                <a href="/testimonials">Testimonials</a>
+                <p>What my clients and mentors have to say about me projects
+                and work ethic.</p>
+            </div>
+            <form class="" action="/test" method="post">
+                {% csrf_token %}
+                Visitor name: <input type="text" name="first_name" value="" placeholder="first name">
+                <button type="submit" name="button">Submit</button>
+            </form>
+    </body>
+</html>

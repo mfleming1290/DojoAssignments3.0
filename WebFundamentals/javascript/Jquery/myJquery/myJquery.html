@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Jquery</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button#button1').click(function() {
+                    $('p#p1').text("Set events on clicks");
+                });
+                $('button#button2').click(function() {
+                    $('p#p2').hide();
+                });
+                $('button#button3').click(function() {
+                    $('p#p2').show();
+                });
+                $('button#button4').click(function() {
+                    $('p#p4').toggle();
+                });
+                $('button#button5').click(function() {
+                    if ( $('div.orange').is(':hidden')  ) {
+                        $('div.orange').slideDown();
+                    } else {
+                        $( "div.orange" ).hide();
+                    }
+                });
+                $('button#button6').click(function() {
+                    if ( $('div.blue').is(':hidden')  ) {
+                        $('div.blue').show();
+                    } else {
+                        $( "div.blue" ).slideUp();
+                    }
+                });
+                $('button#button7').click(function() {
+                    $('#p7').slideToggle();
+                });
+                $('button#button8').click(function() {
+                    $('#red, #purple, #green:hidden').fadeIn("slow");
+                });
+                $('button#button9').click(function() {
+                    $('#p9').fadeOut();
+                });
+                $('button#button10').click(function() {
+                    $( "#pten-two" ).addClass( "selected highlight" );
+                });
+                $('button#button11').click(function() {
+                    $( "#p11" ).before( "<h1>.before</h1>" );
+                });
+                $('button#button12').click(function() {
+                    $( "#p12" ).after( "<h1>.after</h1>" );
+                });
+                $('button#button13').click(function() {
+                    $( "#p13" ).append( " <em>sentence</em>" );
+                });
+                $('button#button14').click(function() {
+                    $( "#html" ).html( "<b> This is added by .html</b>" );
+                });
+                $('.button16').click(function() {
+                    var text = $(this).text();
+                    $("#input1").val(text);
+                });
+                $('button#button17').click(function() {
+                    $('#p17b').text("Some new text");
+                });
+
+                $( ".button18" ).click(function() {
+                  var value;
+
+                  switch ( $( ".button18" ).index( this ) ) {
+                    case 0 :
+                      value = $( ".value" ).data( "value" );
+                      break;
+                    case 1 :
+                      $( ".value" ).data( "value", "1" );
+                      value = "Stored!";
+                      break;
+                    case 2 :
+                      $( ".value" ).data( "value", 2 );
+                      value = "Stored!";
+                      break;
+                    case 3 :
+                      $( ".value" ).removeData( "value" );
+                      value = "Removed!";
+                      break;
+                  }
+                  $( "span" ).text( "" + value );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="section">
+            <button type="button" name="button" id="button1">Click</button>
+            <h1 id="h11">.click</h1>
+            <p id="p1">Click button to see what .click does</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button2">Click</button>
+            <h1 id="h12">.hide</h1>
+            <p id="p2">Click button to see .hide make the paragraph disappear.</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button3">Click</button>
+            <h1 id="h13">.show</h1>
+            <p id="p3">Click button to see .show make the paragraph above reappear.</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button4">Toggle</button>
+            <h1 id="h14">.toggle</h1>
+            <p id="p4">Click button to see .toggle make the paragraph disappear and reappear.</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button5">Click</button>
+            <h1 id="h15">.slideDown</h1>
+            <p id="p5">Click button to see .slideDown make the boxes slide down.</p>
+            <div class="orange"></div>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button6">Click</button>
+            <h1 id="h16">.slideUp</h1>
+            <p id="p6">Click button to see .slideUp make the boxes show and then SLIDE UP.</p>
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button7">Click</button>
+            <h1 id="h17">.slideToggle</h1>
+            <p id="p7">Click button to see .slideUp slide the paragraph.</p>
+
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button8">Click</button>
+            <h1 id="h18">.fadeIn</h1>
+            <p id="p8">Click button to see .slideUp make the boxes show and then SLIDE UP.</p>
+            <div id="red"></div>
+            <div id="purple"></div>
+            <div id="green"></div>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button9">Click</button>
+            <h1 id="h19">.fadeOut</h1>
+            <p id="p9">Click button to see .fadeOut the paragraph.</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button10">Click</button>
+            <h1 id="h110">.addClass</h1>
+            <p id="p10">Click button to see .addClass to highlight the second paragraph.</p>
+            <p id="pten-two">This paragraph is highlighted due to the .addClass</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button11">Click</button>
+            <p id="p11">Click button to see add an h1 tag appear with the name of the Jquery</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button12">Click</button>
+            <p id="p12">Click button to see add an h1 tag appear with the name of the Jquery</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button13">Click</button>
+            <h1 id="h13">.append</h1>
+            <p id="p13">Click button to see what .append finish the</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button14">Click</button>
+            <h1 id="h14">.HTML</h1>
+            <p id="p14">Click button to see what .HTML add words.</p>
+            <div id="html"></div>
+        </div>
+        <div class="section">
+            <button type="button" name="button" class="button16">Click</button>
+            <button type="button" name="button" class="button16">For</button>
+            <button type="button" name="button" class="button16">Values</button>
+            <input type="text" name="" value="Click a button" id="input1">
+            <h1 id="h16">.val</h1>
+            <p id="p16">Click button and .val will show the values of the button .</p>
+        </div>
+        <div class="section">
+            <button type="button" name="button" id="button17">Click</button>
+            <h1 id="h117">.text</h1>
+            <p id="p17">Click button to see what .text change the second paragraph</p>
+            <p id="p17b">This wil change</p>
+        </div>
+        <div class="section, value">
+            <button type="button" name="button" class="button18">Check Value</button>
+            <button type="button" name="button" class="button18">Set value to 1</button>
+            <button type="button" name="button" class="button18">Set value to 2</button>
+            <button type="button" name="button" class="button18">Remove value</button>
+            <p>The value of the div is <span>?</span></p>
+            <h1 id="h18">.data</h1>
+            <p id="p18">Click button to see .data store and show data.</p>
+        </div>
+    </body>
+</html>

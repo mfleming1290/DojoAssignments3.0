@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #bot {border-bottom: 2px solid black;}
+        </style>
+    </head>
+    <body>
+        <h1>Here are the awesome Quotes!</h1>
+        <% if(typeof(data) != 'undefined' ) { %>
+        <% data.forEach(function (data) { %>
+                <p>"<%= data.message %>"</p>
+                <p id="bot"> - <%= data.first_name %> at <%= data.createdAt %></p>
+        <% }) %>
+        <% } %>
+    </body>
+</html>

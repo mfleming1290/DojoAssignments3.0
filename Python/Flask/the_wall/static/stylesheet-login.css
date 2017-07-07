@@ -1,0 +1,40 @@
+html {
+    background-color: #2D6365;
+}
+
+body {
+    width: 970px;
+}
+
+
+#wrapper {
+    background-color: #2E3533;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 100px;
+    margin-left: 550px;
+    margin-top: 150px;
+    border: 2px solid #D6E8E3;
+
+}
+
+#wrapper h1 {
+    color: #F8CCA1;
+}
+
+#wrapper a {
+    color: #F8CCA1;
+    text-decoration: none;
+}
+
+#wrapper input {
+    background-color: #D6E8E3;
+    padding: 10px;
+}
+
+#wrapper button {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 95px;
+}

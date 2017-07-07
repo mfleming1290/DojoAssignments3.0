@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey Index</title>
+    <style type="text/css">
+        div{
+            width: 500px;
+            padding: 30px;
+            border: 1px solid black;
+        }
+        h1{
+            border-bottom: 1px solid black;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid black;
+            background-color: teal;
+            padding: 5px;
+            color: white;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Submitted Info</h1>
+        <p>Name: {{ name }}</p>
+        <p>Dojo Location: {{ location }}</p>
+        <p>Favorite Language: {{ language }}</p>
+        <p>Comment: {{ comment }}</p>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

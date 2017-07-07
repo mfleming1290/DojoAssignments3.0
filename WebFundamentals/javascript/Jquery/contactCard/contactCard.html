@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+                $(document).ready(function() {
+                    $('form').submit(function(){
+                        var value = $('#first_name').val();
+                        var value2 = $('#last_name').val();
+                        var value3 = $('#description').val();
+                    $('#cards').append("<button style = 'border: 2px solid black;padding: 10px'>" + '<p>' + value + " " + value2 + '</p>' + '<p> click for description </p>' + '</button>');
+                            return false;
+                                });
+
+                    $(document).on('click', 'button', function(){
+                        var value3 = $('#description').val();
+                        $(this).replaceWith("<button style = 'border: 2px solid black;padding: 10px'>" + value3 + '</button>');
+
+
+                        })
+
+
+                    });
+    </script>
+    <style type="text/css">
+        *{
+           font-family: sans-serif;
+        }
+
+        }
+        #forms {
+            display: inline;
+
+        }
+        div {
+           display: inline-block;
+           margin-left: 300px;
+
+        }
+        #cards div {
+            display: block;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+                    <form action="/action_page.php" method="get" id="usrform">
+                        <label for="first_name">First Name:</label><br>
+                        <input type="text" id="first_name" name="first_name"><br>
+                        <label for="last_name"> Last Name:</label><br>
+                        <input type="text" id="last_name" name="last_name">
+                            <br>
+                        <textarea name="description" form="usrform" id="description">Enter description:</textarea><br>
+                        <input type="submit" value="Submit">
+                    </form>
+
+            <div id="cards">
+
+            </div>
+
+</body>
+</html>

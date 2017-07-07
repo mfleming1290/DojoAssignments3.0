@@ -1,0 +1,14 @@
+ls
+cd desktop
+cd DojoAssignments/
+git init
+git add .
+git commit -m "Made dojo assignments folder"
+git remote add origin https://github.com/mfleming1290/DojoAssignments.git
+git push -u origin master
+mattfleming$ touch readme.md
+atom readme.md
+git status
+git add .
+git commit -m "added readme.md"
+git push -u origin master

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Welcome to mongoose pack!</h1>
+        <% if(typeof(data) != 'undefined' ) { %>
+        <% data.forEach(function (data) { %>
+            <p><a href="/mongooses/<%= data._id %>"><%= data.name %></a></p>
+            <p><a href="/mongooses/<%= data._id %>">Edit Mongoose</a></p>
+            <form class="" action="/delete/<%= data.id %>" method="post">
+                <input type="submit" name="" value="Delete">
+            </form>
+        <% }) %>
+        <% } %>
+        <div class="">
+            <a href="/mongoose/new">Add new otter</a>
+        </div>
+
+    </body>
+</html>

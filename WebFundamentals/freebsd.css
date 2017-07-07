@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*body {
+    width: 970px;
+    margin: 0 auto;
+}*/
+
+header {
+    background-color: #880000;
+}
+
+.button {
+    background-color: #880000;
+}
+
+form {
+    display: block;
+}
+
+#box {
+    display: inline-block;
+    margin-left: 900px;
+}
+
+#box a {
+    background-color: white;
+    color: #880000;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #EAEAEA;
+    padding-left: 90px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid grey
+}
+
+nav a {
+    color: #990000;
+    text-decoration: none;
+    padding: 0px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-right: 1px solid black;
+}
+
+#lastnav {
+    border-right: none;
+}
+
+#nav2 {
+    background-color: white;
+    padding-left: 90px;
+    border: none;
+    margin-left: 1300px;
+
+}
+#nav2 a {
+font-size: 16px;
+font-weight: normal;
+color: black;
+
+}
+
+main {
+    margin: 0px auto;
+}
+
+.wrapper {
+    display: inline-block;
+    padding: 0px 100px;
+}
+
+.wrapper h2 {
+}
+
+.left p {
+    display: inline-block;
+    height: 300px;
+    width: 400px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.wrapper a {
+    display: inline-block;
+}
+
+.wrapper .left {
+    display: block;
+    vertical-align: top;
+}
+
+.wrapper .left a {
+    display: block;
+}
+
+.devil {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+.button2 {
+    display: block;
+    background-color: #FACC2E;
+    color: #990000;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-top: 50px;
+}
+
+.button3 {
+    display: inline-block;
+    background-color: #D8D8D8;
+    color: #990000;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 200px;
+    margin-top: 30px;
+
+}
+
+.mid a {
+    display: block;
+    color: #000000;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.mid p {
+    display: block;
+}
+
+.mid ul li {
+    margin-left: 20px;
+}
+
+.mid ul a {
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+
+/*.wrapper ul {
+    display: inline-block;
+}*/
+
+.wrapper .left {
+    display: inline-block;
+}
+
+.mid {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.right {
+    display: inline-block;
+    margin-left: 120px;
+    margin-top: 20px;
+    vertical-align: top;
+}
+
+.right p {
+    display: block;
+    margin-left: 10px;
+    position: relative;
+
+
+}
+
+.right ul {
+    display: inline-block;
+    margin-left: 30px;
+}

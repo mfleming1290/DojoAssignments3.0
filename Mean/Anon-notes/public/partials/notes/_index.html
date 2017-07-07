@@ -1,0 +1,15 @@
+<form name='noteForm' action="" ng-submit="createNote(note)">
+    Note: <input type="text" placeholder='Message' ng-model="note.message" minlength='3' required>
+    <input type="submit" name="" value="Add Note">
+    <div ng-messages="noteForm.message.$error">
+        <p ng-message="minlength">The message is too short.</p>
+        <p ng-message="required">The message name is required.</p>
+    </div>
+</form>
+
+<section ng-init='getNotes()'>
+    <h1>Here are all the notes</h1>
+    <div id="note" ng-repeat="note in notes">
+        <p id="left">{{note.message}} noted: on {{ note.createdAt | date:'medium'}}</p>
+    </div>
+</section>

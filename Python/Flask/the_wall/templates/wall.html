@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='stylesheet-wall.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h3>Coding dojo wall</h3>
+        <p>Welcome to the wall {{session['user_info']['first_name']}}!</p>
+        <a href="/logout">Log out</a>
+    </header>
+    <div id="wrapper">
+    <div id="top">
+        <h1>Write your messages here!</h1>
+        <form class="" action="/wall/<user_id>/post" method="post">
+        <textarea name="message" rows="8" cols="150">Write message here</textarea>
+    <button type="submit" name="button">submit</button>
+    </form>
+    </div>
+    <div id="chunk">
+        <h1>Messages</h1>
+            {% for info in info %}
+            <div id="message">
+                <p>{{ info['first_name'] }} {{ info['last_name'] }} - {{ info['created_at'] }} </p>
+                    <p id="messages">{{ info['message'] }}</p>
+                        <h3>Comments:</h3>
+                        <div class="comments">
+                            {% for comment in comments %}
+                                {% if comment['message_id'] == info['id'] %}
+                                    <h4>{{comment['first_name']}} {{comment['last_name']}} - {{comment['created_at']}}</h4>
+                                    <p>{{comment['comment']}}</p>
+                                {% endif %}
+                            {% endfor %}
+                            <form class="post-comment" action="/wall/{{ info['id'] }}/comment_post" method="POST">
+		                	<textarea rows="4" cols=90 name="comment" placeholder="Post a Comment"></textarea>
+			                <button type="submit">Post Comment</button>
+	                    	</form>
+                        </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+</body>
+</html>

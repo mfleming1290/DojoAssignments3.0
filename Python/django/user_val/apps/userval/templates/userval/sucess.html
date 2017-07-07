@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>The username you entered {{request.session.name}} is valid. Thank you!</h1>
+
+        <h3>Usernames entered:</h3>
+        {% for user in users %}
+            <p>{{user.name}} {{user.created_at}}</p>
+        {% endfor %}
+    </body>
+</html>

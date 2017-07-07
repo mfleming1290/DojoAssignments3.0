@@ -1,0 +1,46 @@
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+#star{
+    height: 15px;
+    width: 100px;
+}
+
+header {
+    padding-left: 400px;
+}
+
+header a {
+    padding: 0px 10px;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+#bookpage {
+    border-top: 1px solid black;
+}
+
+#book {
+    height: auto;
+    width: 400px;
+}
+
+#reviews {
+    display: inline-block;
+}
+
+#right {
+    display: inline-block;
+
+}
+
+#left {
+    display: inline-block;
+    height: auto;
+    width: 400px;
+
+}

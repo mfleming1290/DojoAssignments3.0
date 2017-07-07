@@ -1,0 +1,239 @@
+* {
+    margin 0;
+    padding: 0;
+}
+
+body {
+    width: 970px;
+}
+
+
+
+header img {
+    width: 300px;
+    height: auto;
+
+}
+
+header p {
+    vertical-align: top;
+    display: inline-block;
+    color: #D7DFE5;
+    height: 10px;
+    margin-left: 50px;
+    }
+
+span {
+    color: black;
+}
+
+#right {
+    display: inline-block;
+    margin-left: 400px;
+    padding-bottom: 30px;
+
+}
+
+#right a {
+    color: #918723;
+}
+
+header #search {
+    display: block;
+    height: 40px;
+    width: 250px;
+    background-color: #3C3C3C;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 10px;
+
+
+}
+
+input[type=search]{
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    color: grey;
+}
+
+button {
+    background-color: #20476B;
+    border-radius: 5px;
+    height: 30px;
+    width: 40px;
+}
+
+ /*input{
+     width: 150px;
+     height: 30px;
+     text-align: center;
+     color: grey;
+     display: inline block;
+
+ }*/
+
+nav {
+    background-color: #3870A3;
+    display: inline-block;
+    margin-left: 90px;
+    border-radius: 5px;
+    padding: 10px 50px;
+    box-shadow: 2px 2px 5px black;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0px 16px;
+}
+
+#wrapper {
+    background-color: #20476B;
+}
+
+#links {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#links ul {
+    margin-left: 150px;
+    padding-top: 10px;
+    display: inline-block;
+    list-style-position: inside;
+}
+
+#links ul li {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#links ul li a {
+    color: #D7DFE5;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-left: -15px;
+}
+
+#sayings {
+    display: inline-block;
+    text-align: center;
+
+}
+
+#sayings p {
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 550px;
+    color: #D7DFE5;
+    font-size: 14px;
+    margin: 20px;
+
+}
+
+#sayings h3 {
+    color: #D7B635;
+    font-weight: 300;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+#sayings h4 {
+    color: white;
+    font-weight: 300;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+#content {
+    display: inline-block;
+}
+
+#learning {
+    background-color: white;
+    border-top: 2px solid black;
+
+}
+
+#gs {
+    width: 400px;
+    text-align: center;
+    margin-left: 100px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#gs p {
+    width: 300px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+
+#gs h3 {
+    border-top: 4px solid #689DCF;
+    width: 300px;
+    font-weight: 400;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-right: 100px;
+}
+
+#gs ul {
+    width: 300px;
+}
+
+#app {
+    width: 400px;
+    text-align: center;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+#app p {
+    width: 300px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+
+#app h3 {
+    border-top: 4px solid #689DCF;
+    width: 300px;
+    font-weight: 400;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-right: 100px;
+}
+
+#app ul {
+    width: 300px;
+}
+
+footer {
+    background: linear-gradient(#20496D, #2C68A1);
+    text-align: center;
+
+    padding-top: 40px;
+}
+
+footer p {
+    font-size: 8px;
+    color: #5E93C3;
+    vertical-align: baseline;
+
+}
+
+footer a {
+    color: #5E93C3;
+    text-decoration: none;
+    padding: 30px;
+    font-family: Helvetica, Arial, sans-serif;
+
+}

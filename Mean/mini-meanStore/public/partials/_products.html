@@ -1,0 +1,27 @@
+<section>
+    <div ng-if='errors'>
+        <ul>
+            <li ng-repeat='error in errors'>{{ error }}</li>
+        </ul>
+    </div>
+    <div style='display: inline-block'>
+    <h3>Add a product</h3>
+    <form action="" ng-submit="createProduct(newProduct)">
+        <div><label for="">Name:<br><input type="text" placeholder='Name' ng-model="newProduct.name"></label></div>
+        <div><label for="">Image (url):<br><input type="text" placeholder='image url' ng-model="newProduct.img"></label></div>
+        <div><label for="">Description:<br><textarea name="name" rows="8" cols="30" placeholder='description' ng-model="newProduct.description"></textarea></label></div>
+        <div><label for="">Quantity:<br><input type="text" placeholder='quantity' ng-model="newProduct.quantity"></label></div>
+        <div><input type="submit" name="" value="Create"></div>
+    </form>
+    </div>
+    <input type="text" placeholder="Filter products" ng-model='productFilter'>
+    <div ng-repeat='product in products | filter:productFilter' ng-show='$index < 6' style='display: inline-block'>
+        <div style='margin: 20px'>
+            <img ng-show="product.img !== undefined" ng-src="{{product.img}}" alt="Product Image" style='height: 80px'>
+            <h3 >{{product.name}} {{product.quantity}} left</h3>
+            <button type="button" ng-click='deleteProduct(product._id)'>X</button>
+        </div>
+    </div>
+
+
+</section>

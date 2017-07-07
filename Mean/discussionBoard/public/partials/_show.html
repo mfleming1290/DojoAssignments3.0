@@ -1,0 +1,28 @@
+<ng-include src="'partials/shared/_nav.html'"  onload=""  autoscroll=""></ng-include>
+
+<section ng-init='getTopic()'>
+    <a href="#">{{topic.user_id.username}}</a>
+    <p>{{topic.title}}</p>
+    <p>{{topic.description}}</p>
+        <form ng-submit='createPost(newPost, topic._id)'>
+            <div><label for="">Post an answer:<br><textarea name="name" rows="8" cols="80" placeholder='Answer' ng-model="newPost.message"></textarea></label></div>
+            <button>Post an answer</button>
+        </form>
+    <div>
+        <div ng-repeat='post in posts'>
+            <p><a href="#">{{post.user_id.username}}</a> {{post.message}}</p>
+            <p>{{post.comments[0].comment}}</p>
+            <div>
+                <form ng-submit='createComment(newComment, post._id, topic._id)'>
+                    <div><label for="">Post a comment:<br><textarea name="name" rows="8" cols="80" placeholder='Comment' ng-model="newComment.comment"></textarea></label></div>
+                    <input type="submit" name="" value="Comment">
+                </form>
+            </div>
+            <div ng-repeat='comment in post.comments'>
+                <p>{{ comment.user_id.username }} - {{comment.comment}}</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>

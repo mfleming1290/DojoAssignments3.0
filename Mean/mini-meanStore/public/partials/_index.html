@@ -1,0 +1,24 @@
+<div>
+    <input type="text" placeholder="Filter products" ng-model='productFilter'>
+      <div ng-repeat='product in products | filter:productFilter' ng-show='$index < 6' style='display: inline-block'>
+            <div style='margin: 20px'>
+                <h3 >{{product.name}} {{product.quantity}} left </h3>
+                <img ng-show="product.img !== undefined" ng-src="{{product.img}}" alt="Product Image" style='height: 80px'>
+            </div>
+      </div>
+      <a href="#!/products">Show more...</a>
+          <h2>Recent orders</h2>
+          <ul>
+            <li ng-repeat='order in recentOrders track by $index'>
+              <p>{{order._customer.name}} purchased {{ order.quantity }} {{ order._product.name }}... <span am-time-ago="order.created_at | amParse:'YYYY.MM.DD HH:mm:ss'"></span></p>
+            </li>
+          </ul>
+          <a href="#!/orders">show all orders...</a>
+          <h2>New customers</h2>
+          <ul>
+            <li ng-repeat='customer in recentCustomers track by $index'>
+              <p>{{customer.name}} joined <span am-time-ago="customer.created_at | amParse:'YYYY.MM.DD HH:mm:ss'"></span></p>
+            </li>
+          </ul>
+          <a href="#!/customers">show all customers...</a>
+</div>

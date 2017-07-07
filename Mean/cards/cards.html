@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="cards.js"></script>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title></title>
+            </head>
+            <body>
+                Make deck: <button type="button" name="button" id="button">here</button>
+                <input type="text" name="stuff" value="" id="text">
+                Make player: <button type="button" name="button" id="button2">here</button>
+                Take Card: <button type="button" name="button" id="button3">here</button>
+                <h3>List of players:</h3>
+                <ul id=list>
+
+                </ul>
+                <ol id="hand">
+
+                </ol>
+                <ul id=deck>
+
+                </ul>
+                <script>
+                    var list = document.getElementById('list');
+                    var button = document.getElementById('button');
+                    var button2 = document.getElementById('button2');
+                    var button3 = document.getElementById('button3');
+                    var button4 = document.getElementById('button4');
+                    var text = document.getElementById('text')
+                    var hand = document.getElementById('hand')
+                    var decklist = document.getElementById('deck')
+                    var newplayer = new player("Matt")
+                    button.onclick = function(e){
+                        var newdeck = new deck()
+                        console.log(newdeck);
+                        return newdeck;
+                    }
+                    button2.onclick = function(e){
+                        if (!text.value.trim()){
+                            return;
+                        }
+                        var newplayer = new player(text.value)
+                        list.innerHTML += `<li> ${ text.value }</li>`;
+                        text.value = '';
+                        console.log(newplayer);
+                    }
+                    button3.onclick = function(e){
+                        newplayer.takeCard(deck)
+                    }
+                    // button4.onclick = function(e){
+                    //
+                    //     list.innerHTML += `<li> ${ text.value }</li>`;
+                    // }
+                </script>
+
+
+            </body>
+        </html>
+    </body>
+</html>

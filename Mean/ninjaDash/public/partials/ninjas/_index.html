@@ -1,0 +1,25 @@
+<ng-include src="'partials/shared/_nav.html'"  onload=""  autoscroll=""></ng-include>
+<section ng-init='getNinjas()'>
+    <h1>Here are all the ninjas</h1>
+    <a href="#!/ninjas/new">Create a new ninja!</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Belt</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat='ninja in ninjas'>
+            <td><a href="#!/ninjas/{{ninja._id}}">{{ninja.name}}</a></td>
+            <td>{{ninja.age}}</td>
+            <td>{{ninja.location}}</td>
+            <td ng-bind='ninja.belt.color'></td>
+            <td>
+                <a href="#!/ninjas/{{ninja._id}}/edit"><button>Edit</button></a>
+                <button ng-click='deleteNinja(ninja._id)'>Delete</button>
+            </td>
+        </tr>
+    </table>
+    <a href="#!/belts"><button type="button" name="button">Belts</button></a>
+</section>

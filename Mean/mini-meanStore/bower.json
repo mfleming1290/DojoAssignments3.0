@@ -1,0 +1,22 @@
+{
+  "name": "mini-meanStore",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "matt <matthewjamesfleming@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mfleming1290/DojoAssignments-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-cookies": "^1.6.4"
+  }
+}

@@ -1,0 +1,12 @@
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+header {
+    padding-left: 300px;
+}
+
+header a {
+    padding: 0px 10px;
+}

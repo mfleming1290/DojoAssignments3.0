@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            #add{
+                display: block;
+                vertical-align: top;
+            }
+            #list{
+                display: block;
+                border: 1px solid black;
+                padding-right: 40px;
+            }
+
+        </style>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="main.js" charset="utf-8"></script>
+        
+    </head>
+    <body>
+        <h1>Products</h1>
+        <div ng-controller='productController'>
+            <div id="add">
+                <form ng-submit='addProduct()'>
+                    <label for="" >Name: </label><br>
+                    <input type='text' ng-model='product.name'><br>
+                    <label for="">Price: </label><br>
+                    <input type='number' step="0.01" ng-model='product.price'><br>
+                    <input type='submit' value='Add Product'>
+                </form>
+            </div>
+            <div id="list">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr ng-repeat="product in products track by $index">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price | currency:"USD $"}}</td>
+                        <td><span ng-show="product.name"><button type="button" ng-click = 'deleteProduct($index)'>Delete Product</button></span></td>
+                     </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

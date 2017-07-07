@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Test Index</title>
+    <style type="text/css">
+        body {
+            width: 970px;
+        }
+
+        div {
+            border: 1px solid black;
+            width: 500px;
+            padding: 10px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form class="" action="/results" method="post">
+            Name: <input type="text" name="name" id="">
+            <br>
+            Dojo Location: <select name="location" id="">
+                <option value="San Jose">San Jose</option>
+                <option value="Online">Online</option>
+                <option value="Seattle">Seattle</option>
+            </select><br>
+            Favorite Language: <select name="language" id="">
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="Javascript">Javascript</option>
+            </select><br>
+            <p>Comment (optional):</p>
+            <textarea name="comment" rows="8" cols="80"></textarea><br>
+            <input type="submit" value="create user">
+        </form>
+    </div>
+</body>
+</html>

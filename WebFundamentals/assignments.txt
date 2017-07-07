@@ -1,0 +1,19 @@
+Mkdir test
+Cd test
+touch index.html
+touch styles.css
+touch aboutMe.txt
+git init
+git add .
+git commit - m “initial commit”
+vi aboutme.txt
+git add .
+git commit -m " updated aboutme"
+vi aboutme.txt
+git add .
+git commit -m "added favorite movie to about me"
+git log
+git revert d47240f98ca618227aa2854827eacc5557415bff
+vi aboutme.txt
+Git add .
+git commit -m "updated about me with favorite tv show"

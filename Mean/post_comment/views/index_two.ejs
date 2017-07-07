@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            #box {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+             <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+        <h1>Make a post!</h1>
+        <form class="" action="/posts" method="post">
+            Post: <textarea name="text" rows="8" cols="80"></textarea>
+            <input type="submit" name="" value="submit">
+        </form>
+        <div id="box">
+            <% if(typeof(data) != 'undefined' ) { %>
+            <% for (x in data) { %>
+                <p><a href="/posts/<%= data.id %>"><%= data[x].text %></a></p>
+                <% for (y in data[x]._comments) { %>
+                    <h5><%="Comment: " + data[x].comments[y].text %></h5>
+                <% } %>
+                <form class="" action="/comment/<%= data.id %>" method="post">
+                    Comment: <input type="text" name="text" value="">
+                    <input type="submit" name="" value="Comment">
+                </form>
+            <% } %>
+            <% } %>
+
+        </div>
+    </body>
+</html>

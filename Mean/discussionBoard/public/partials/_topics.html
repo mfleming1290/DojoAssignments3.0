@@ -1,0 +1,33 @@
+<ng-include src="'partials/shared/_nav.html'"  onload=""  autoscroll=""></ng-include>
+
+<section ng-init='getTopics()' ng-controller='topicController'>
+    <div ng-if='errors'>
+        <ul>
+            <li ng-repeat='error in errors'>{{ error }}</li>
+        </ul>
+    </div>
+    <form action="" ng-submit="createTopic(topic)">
+        <div><label for=""></label><input type="text" name="" value=""placeholder='topic' ng-model="topic.title"><div>
+        <label for=""><textarea name="" rows="8" cols="80" placeholder='description' ng-model="topic.description"></textarea></label>
+        <div><label for=""></label><input type="text" name="" value=""placeholder='category' ng-model="topic.category"><div>
+        <input type="submit" name="" value="Post a topic">
+    </form>
+    <div ng-repeat='topic in topics | orderBy:"createAt":true' style="border: 1px solid black">
+        <h3>{{topic.user_id.username}} - {{ topic.createdAt | date:'medium'}}</h3>
+        <p>{{topic.description}}</p>
+    </div>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Topic</th>
+            <th>User Name</th>
+            <th>Posts</th>
+        </tr>
+        <tr ng-repeat='topic in topics | orderBy:"createAt":true' style="border: 1px solid black">
+            <td>{{topic.category}}</td>
+            <td><a href="#!/topics/{{topic._id}}">{{topic.title}}</a></td>
+            <td>{{topic.user_id.username}}</td>
+            <td>{{topic.posts}}</td>
+        </tr>
+    </table>
+</section>

@@ -1,0 +1,13 @@
+mkdir basic_repo
+cd basic_repo/
+git init
+touch about_me.txt
+basic.html
+atom basic_repo
+git add .
+git commit -m "added files"
+git remote add origin https://github.com/mfleming1290/basic_repo.git
+git push -u origin master
+git add .
+git commit -m "made changes"
+git push -u origin master

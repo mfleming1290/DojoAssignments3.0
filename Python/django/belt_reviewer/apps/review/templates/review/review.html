@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'review/css/userstyle.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <a id="first" href="{% url 'review:index' %}">Home</a>
+            <a id="second" href="{% url 'log:logout' %}" id="logout">Log Out</a>
+        </header>
+        <div id="review">
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <h3>Add a new book title and a review:</h3>
+            <form class="" action="{% url 'review:add_book' %}" method="post">
+                {% csrf_token %}
+                <label for="">Book Title:</label>
+                <input type="text" name="title" value=""><br>
+                <label for="">Author:</label><br>
+                Choose from a list: <select class="name" name="pick_name">
+                    {% for author in authors %}
+                    <p>{{author.name}} </p>
+                    <option value="{{author.name}}">{{author.name}}</option>
+                    {% endfor %}
+                </select><br>
+                Or add a new Author: <input type="text" name="name" value=""><br>
+                <label for="">Review:</label><br>
+                <textarea name="message" rows="8" cols="80">book review here</textarea><br>
+                <label for="">Rating:</label><br>
+                <select class="rating" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <button type="submit" name="button">Add Review</button>
+            </form>
+        </div>
+    </body>
+</html>

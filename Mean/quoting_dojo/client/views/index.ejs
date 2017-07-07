@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Welcome to quoting dojo!</h1>
+        <% if(typeof(data) != 'undefined' ) { %>
+        <% data.forEach(function (data) { %>
+                <p>"<%= data.message %>"</p>
+                <p id="bot"> - <%= data.first_name %> at <%= data.createdAt %></p>
+        <% }) %>
+        <% } %>
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+             <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+        <form class="" action="/users" method="post">
+            Your name: <input type="text" name="name" value="">
+            Your quote: <textarea name="message" rows="8" cols="80"></textarea>
+            <input type="submit" name="" value="submit">
+        </form>
+        <a href="/quotes">Skip to quotes!</a>
+    </body>
+</html>

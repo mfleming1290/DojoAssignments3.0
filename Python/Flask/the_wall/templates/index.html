@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='stylesheet-login.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        {% if status == 'login' %}
+        <h1>Log In here</h1>
+        <form class="" action="/user" method="post">
+            <input type="text" name="email" value="" placeholder="Email"><br>
+            <input type="password" name="password" value="" placeholder="Password"><br>
+            <button type="submit" name="login">Log in</button>
+        </form>
+        <a href="/reg">Click here to register!</a>
+        {% endif %}
+
+        {% if status == 'register' %}
+        <h1>Register Here!</h1>
+        <form class="" action="/user" method="post">
+            <input type="text" name="first_name" value="" placeholder="First Name"><br>
+            <input type="text" name="last_name" value="" placeholder="Last Name"><br>
+            <input type="text" name="email" value="" placeholder="Email"><br>
+            <input type="text" name="password" value="" placeholder="Password"><br>
+            <input type="text" name="confirm_password" value="" placeholder="Confirm Password"><br>
+            <input type="submit" name="register" value="Register">
+        </form>
+        <a href="/">Return to log in</a>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p> {{message}}</p>
+                {% endfor %}
+            {% endif %}
+         {% endwith %}
+     </div>
+</body>
+</html>

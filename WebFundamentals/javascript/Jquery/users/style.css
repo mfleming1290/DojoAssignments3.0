@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0px auto;
+}
+
+table {
+    border: 2px solid black;
+}
+
+th {
+    padding: 0px 10px;
+}
+
+
+
+label {
+    
+}

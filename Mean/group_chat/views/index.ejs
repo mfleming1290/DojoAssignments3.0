@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+                // Make variables and new user
+                var socket = io.connect();
+                var cur_user;
+                var make_new_user = function() {
+                    var name = prompt('What is your name?')
+                    socket.emit('page_load', {user: name})
+
+                }
+                make_new_user();
+                socket.on("user_exists", function(data) {
+                    $('#error').html(data.error)
+                    make_new_user();
+                })
+                // load and send messages
+                socket.on("load_messages", function (data) {
+
+                    cur_user = data.cur_user;
+                    console.log(data.messages);
+                    console.log(cur_user);
+                    var messages = data.messages
+                    var messages_thread = "";
+
+                    for (var i = 0; i < messages.length; i++) {
+                         messages_thread += "<p>" + messages[i].name + ": " + messages[i].message + "</p>";
+                    }
+                    $("#board").append(messages_thread);
+                })
+
+                $("#new_message").submit(function (){
+                    console.log("working");
+                    socket.emit('sending_message', {messaged: $("#added_message").val(), message_user: cur_user})
+                    return false;
+                });
+                socket.on('updated_message', function (data){
+                    console.log(cur_user);
+                    $('#board').append("<p>" + data.mess_user + ": " + data.newest_messsage + "</p>")
+                });
+
+
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Conversation Board</h1>
+        <div id="error"></div>
+        <div id="board">
+
+        </div>
+        <form id="new_message">
+            <input type="text" name="" value="" id="added_message">
+            <input type="submit" name="" value="submit">
+        </form>
+    </body>
+</html>

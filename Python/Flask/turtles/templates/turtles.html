@@ -1,0 +1,26 @@
+<html>
+  <head>
+     <title>My User Page</title>
+  </head>
+  <body>
+    {% if color == 'blue' %}
+        <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+    {% elif color == 'purple' %}
+        <img src="{{ url_for('static', filename='donatello.jpg') }}">
+    {% elif color == 'red' %}
+        <img src="{{ url_for('static', filename='raphael.jpg') }}">
+    {% elif color == 'orange' %}
+        <img src="{{ url_for('static', filename='michelangelo.jpg') }}">
+    {% elif color != 'orange' or 'blue' or 'purple' or 'red' %}
+        <img src="{{ url_for('static', filename='notapril.jpg') }}">
+    {% elif color == "none" %}
+        <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+        <img src="{{ url_for('static', filename='donatello.jpg') }}">
+        <img src="{{ url_for('static', filename='raphael.jpg') }}">
+        <img src="{{ url_for('static', filename='michelangelo.jpg') }}">
+    {% endif %}
+
+
+
+  </body>
+</html>

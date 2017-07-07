@@ -1,0 +1,12 @@
+body {
+    width: 970px;
+    margin: 0px auto;
+}
+div {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px 100px;
+}
+p {
+    font-size: 20px;
+}

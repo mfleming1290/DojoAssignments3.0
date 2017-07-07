@@ -1,0 +1,9 @@
+<section>
+    <a href="#!/belts"><button>Belts</button></a>
+    <h1>Make a new belt</h1>
+    <form ng-submit='newBelt(belt)'>
+        <div><label for="">Color: <input type="text" ng-model='belt.color' placeholder="Color"></label></div>
+        <div><label for="">Level: <input type="number" min='7' max='10' ng-model='belt.level' placeholder="Level"></label></div>
+        <button>Submit</button>
+    </form>
+</section>

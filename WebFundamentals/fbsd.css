@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #880000;
+}
+
+.button {
+    background-color: #880000;
+}
+
+form {
+    display: block;
+}
+
+#box {
+    display: inline-block;
+    margin-left: 900px;
+}
+
+#box a {
+    background-color: white;
+    color: #880000;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #EAEAEA;
+}
+
+nav a {
+    color: #990000;
+    text-decoration: none;
+    padding: 0px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-right: 1px solid black;
+
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.wrapper h2 {
+    display: block;
+}
+
+.wrapper p {
+    display: inline-block;
+    height: 300px;
+    width: 200px;
+}
+
+.wrapper a {
+    display: block;
+}
+
+.wrapper ul {
+    display: inline-block;
+}
+
+.left {
+    display: inline-block;
+}
+
+.left a {
+    display: inline-block;
+}
+
+.left ul {
+    display: inline-block;
+}
+
+.left ul li a {
+    display: block;
+}
+
+.button2 {
+    display: block;
+    background-color: #FACC2E;
+    color: #990000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.button6 {
+    display: inline-block;
+    background-color: grey;
+    color: #990000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+
+.wrapper a {
+    display: inline-block;
+}
+
+.wrapper .right {
+    display: inline-block;
+}

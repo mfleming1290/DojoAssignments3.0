@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style media="screen" type"text/css">
+            #win {
+                background-color: green;
+                padding: 50px;
+                width: 100px;
+                text-align: center;
+            }
+            #high, #low {
+                background-color: red;
+                padding: 50px;
+                width: 50px;
+                width: 100px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Welcome to the Great Number Game!</h1>
+            <p>I am thinking of a number between 1 and 100</p>
+            <p>Take a guess!</p>
+            <form class="" action="/" method="POST">
+                <input type="text" name="guess" id="guess">
+                <input type="submit" value="guess it">
+            </form>
+            <div>
+            {% if response == "you win" %}
+                <div id="win">
+                    <p>{{numguess}} Was the answer</p>
+                    <form class="" action="/reset" method="post">
+                        <input type="hidden" name="reset" value="reset">
+                        <input type="submit" name="resest" value="Play again!">
+                    </form>
+                </div>
+            {% elif response == "too high" %}
+                <div id="high">
+                    <p>Too High</p>
+                </div>
+            {% elif response == "too low" %}
+                <div id="low">
+                    <p>Too Low</p>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <input type="text" name="stuff" value="" id="text">
+        <button type="button" name="button" id="button">add item</button>
+        <ul id=list>
+        </ul>
+
+        <script>
+            var list = document.getElementById('list');
+            var button = document.getElementById('button');
+            var text = document.getElementById('text')
+            button.onclick = function(e){
+                if (!text.value.trim()){
+                    return;
+                }
+                list.innerHTML += `<li> ${ text.value }</li>`;
+                text.value = '';
+            }
+        </script>
+
+
+    </body>
+</html>

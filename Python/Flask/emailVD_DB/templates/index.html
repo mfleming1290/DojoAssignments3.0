@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Validation Example</title>
+    <style media="screen" type='text/css'>
+        body{
+        width: 970px;
+        margin: 0px auto;
+       }
+        #invalid {
+            background-color: red;
+            height: 50px;
+            width: 300px;
+            border: 1px solid black;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p id='invalid'>{{messages}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form class="" action="/results" method="post">
+        Email Address: <input type="text" name="email" value="">
+        <input type="submit" name="" value="Submit">
+    </form>
+</body>
+</html>

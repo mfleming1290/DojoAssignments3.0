@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <div>
+            <p>Your num is: {{session['number']}}</p>
+            <p>your guess is: {{session['guess']}}</p>
+            <p>{{response}}</p>
+        </div>
+        <form class="" action="/result" method="post">
+            <input type="text" name="name" id="">
+            <input type="submit" value="guess">
+        </form>
+    </div>
+</body>
+</html>

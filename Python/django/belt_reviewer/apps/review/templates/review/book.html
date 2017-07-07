@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'review/css/bookstyle.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <a id="first" href="{% url 'review:index' %}">Home</a>
+            <a id="second" href="{% url 'log:logout' %}" id="logout">Log Out</a>
+        </header>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div id="left">
+        <h3>{{book.title}}</h3>
+        <p>Author: {{authors.name}}</p>
+        <h3>Reviews:</h3>
+        {% for book in book.book_reviews.all %}
+            {% for review in review %}
+                {% for user in user %}
+                    {% if review.id == book.id and review.user_review == user%}
+                        <div id="bookpage">
+                        <p>Rating: <img id="star" src="../../static/review/images/{{review.rating}}.png" alt="{{review.rating}}"></p>
+                        <p><a href="{% url 'review:user' user.id %}">{{user.first_name}}</a> says:  <em>{{review.message}}</em></p>
+                        <p><em>{{review.created_at}}</em></p>
+                        {% if review.user_review == curr_user %}
+                            <a href="{% url 'review:delete' review.id %}">Delete This Review</a></p>
+                        {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+
+        </div>
+        <div id="right">
+            <form class="" action="{% url 'review:new_review' book.id %}" method="post">
+                {% csrf_token %}
+                <label for="">Review:</label><br>
+                <textarea name="message" rows="8" cols="50">book review here</textarea><br>
+                <label for="">Rating:</label><br>
+                <select class="rating" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <button type="submit" name="button">Add Review</button>
+            </form>
+        </div>
+
+    </body>
+</html>
