@@ -1,0 +1,18 @@
+<h3>Game 1</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let player of players'>
+            <td>{{player.name}}</td>
+            <td><span [ngClass]="{ 'green': player.gameOne == 'playing' }" >Playing</span> <span [ngClass]="{ 'red': player.gameOne == 'not playing' }">Not Playing</span> <span [ngClass]="{ 'yellow': player.gameOne == 'undecided' }">Undecided</span></td>
+        </tr>
+        
+        
+    </tbody>
+    
+</table>

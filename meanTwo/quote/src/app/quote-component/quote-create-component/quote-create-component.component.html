@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>Add a Quote</legend>
+  <form (ngSubmit)='onSubmit() || newQuote.reset()' #newQuote='ngForm'>
+    <textarea rows="" cols="" name="message" [(ngModel)]='quote.message' #message='ngModel' required minlength='4'></textarea><br>
+    <div *ngIf ='(message.touched || message.dirty) && message.errors'>
+        <div *ngIf='message.errors.required' class='alert alert-danger'>You must enter a quote</div>
+        <div *ngIf='message.errors.minlength' class='alert alert-danger'>Message must at leaste {{message.errors.minlength.requiredLength}} characters. You only have {{message.errors.minlength.actualLength}} characters</div>
+    </div>
+    <input type="" name="author" [(ngModel)]='quote.author' #author='ngModel' required minlength='1'>
+    <div *ngIf ='(author.touched || author.dirty) && author.errors'>
+        <div *ngIf='author.errors.required' class='alert alert-danger'>You must enter a author</div>
+        <div *ngIf='author.errors.minlength' class='alert alert-danger'>author must at leaste {{author.errors.minlength.requiredLength}} characters. You only have {{author.errors.minlength.actualLength}} characters</div>
+    </div>
+    <button type="">Add a Quote</button>
+  </form>
+</fieldset>
+

@@ -1,0 +1,11 @@
+.ng-invalid:not(form).ng-touched, .ng-invalid:not(form).ng-dirty {
+    border: 2px solid red;
+}
+
+.ng-valid:not(form){
+    border: 2px solid green;
+}
+
+input.ng-invalid.ng-touched:focus {
+    border: 2px solid orange;
+}

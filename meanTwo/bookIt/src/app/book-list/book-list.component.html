@@ -1,0 +1,26 @@
+<h1>Book It</h1>
+<app-new-book (sendBook)='dataFromNewBook($event)'></app-new-book>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let book of books'>
+            <td>{{book.id}}</td>
+            <td>{{book.title | titleize}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.author}}</td>
+            <td></td>
+        </tr>
+        
+        
+    </tbody>
+    
+</table>
+ 

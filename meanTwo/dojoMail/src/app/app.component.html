@@ -1,0 +1,23 @@
+<fieldset>
+  <legend>Dojo Mail</legend>
+  <table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Importance</th>
+            <th>Subject</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let mail of mails'>
+            <td>{{mail.Email | lowercase}}</td>
+            <td> <span *ngIf='mail.Importance'>High</span><span *ngIf='!mail.Importance'>Low</span></td>
+            <td>{{mail.Subject}}</td>
+            <td>{{mail.Content}}</td>
+        </tr>
+        
+        
+    </tbody>
+</table>
+</fieldset>

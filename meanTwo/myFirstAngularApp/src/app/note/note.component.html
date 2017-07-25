@@ -1,0 +1,5 @@
+<p>
+  note works!
+  {{notes | json}}
+</p>
+<app-note-list [myNotes]='notes' (aTaskEventEmitter)='dataFromChild($event)'></app-note-list>

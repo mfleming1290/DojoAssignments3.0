@@ -1,0 +1,34 @@
+<fieldset>
+        <legend>Add a Book</legend>
+        <form (ngSubmit)='onSubmit() || newBook.reset()' #newBook ='ngForm'>
+            <div class="form-group">          
+                <label for="">Title</label>
+                <input id='title' type="text" class="form-control" name='title' [(ngModel)]='book.title' #title='ngModel' minlength="3" required>
+                <div *ngIf ='(title.touched || title.dirty) && title.errors'>
+                    <div *ngIf='title.errors.required' class='alert alert-danger'>You must enter a book title</div>
+                    <div *ngIf='title.errors.minlength' class='alert alert-danger'>Title must at leaste {{title.errors.minlength.requiredLength}} characters. You only have {{title.errors.minlength.actualLength}} characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Author</label>
+                <input id='author' type="text" class="form-control" name='author' [(ngModel)]='book.author' #author='ngModel' required>
+            </div>
+            <div class="form-group">  
+                <label for="">Year</label>
+                <input id='year' type="number" class="form-control" name='year' [(ngModel)]='book.year' #year='ngModel' required>
+            </div>
+            <div class="form-group">                
+                <label for="">Pages</label>
+                <input id='pages' type="number" class="form-control" name='pages' [(ngModel)]='book.pages' #pages='ngModel' required>
+            </div>
+            <div class="form-group">               
+                <label for="">Publisher</label>
+                <input id='publisher' type="text" class="form-control" name='publisher' [(ngModel)]='book.publisher' #publisher='ngModel' minlength="3" required>
+                <div *ngIf ='(publisher.touched || publisher.dirty) && publisher.errors'>
+                    <div *ngIf='publisher.errors.required' class='alert alert-danger'>You must enter a book publisher </div>
+                    <div *ngIf='publisher.errors.minlength' class='alert alert-danger'>Publisher must at leaste {{publisher.errors.minlength.requiredLength}} characters. You only have {{publisher.errors.minlength.actualLength}} characters</div>
+                </div>
+            </div>
+            <button [disabled]=newBook.invalid [hidden]='newBook.invalid' class="btn btn-md btn-success">Submit</button>
+        </form>
+    </fieldset>

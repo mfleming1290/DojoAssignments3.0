@@ -1,0 +1,14 @@
+  <fieldset>
+    <legend>Add Note</legend>
+      <form (ngSubmit)='onSubmit() || newNote.reset()' #newNote='ngForm' >
+        <div class="form-group">          
+                <label for="">Note:</label>
+                <input id='message' type="text" class="form-control" name='message' [(ngModel)]='note.message' #message='ngModel' minlength="3" required>
+                <div *ngIf ='(message.touched || message.dirty) && message.errors'>
+                    <div *ngIf='message.errors.required' class='alert alert-danger'>You must enter a  note</div>
+                    <div *ngIf='message.errors.minlength' class='alert alert-danger'>Note must at leaste {{message.errors.minlength.requiredLength}} characters. You only have {{message.errors.minlength.actualLength}} characters</div>
+                </div>
+            </div>
+        <button [disabled]='!newNote.valid' class="btn btn-md btn-success">Add note</button>
+      </form>
+  </fieldset>

@@ -1,0 +1,8 @@
+<div *ngFor="let quote of myQuotes">
+  <p>{{quote.message}}</p>
+  <p>{{quote.author}}</p>
+  <p *ngIf='quote.vote > 0'> +{{quote.vote}}</p>
+  <button type="" (click)='upVote(quote)'>Vote Up</button>
+  <button type="" (click)='downVote(quote)'>Vote Down</button>
+  <button type="" (click)='delete(quote)'>Delete</button>
+</div>

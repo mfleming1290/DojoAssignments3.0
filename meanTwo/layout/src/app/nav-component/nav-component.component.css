@@ -1,0 +1,17 @@
+.nav {
+    width: 200px;
+    margin: 30px;
+    background-color: royalblue;
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+div a {
+  display: block;  
+  padding: 5px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 3px 3px;
+  background-color: white;
+}

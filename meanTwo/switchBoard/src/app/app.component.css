@@ -1,0 +1,13 @@
+.off {
+    background-color: red;
+    color: white;
+}
+
+.on {
+    background-color: green;
+    color: white;
+}
+
+button {
+        display: inline;
+}

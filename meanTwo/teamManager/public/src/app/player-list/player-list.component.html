@@ -1,0 +1,20 @@
+<app-player-create></app-player-create>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let player of players'>
+            <td>{{player.name}}</td>
+            <td>{{player.position}}</td>
+            <td><button class="btn btn-sm btn-warning" (click)='deletePlayer(player)'>Delete</button></td>
+        </tr>
+        
+        
+    </tbody>
+    
+</table>

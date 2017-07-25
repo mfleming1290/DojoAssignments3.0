@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>Switchboard</h1>
+
+<div *ngFor='let button of buttons; let idx = index'>
+  <button (click)='toggle(idx)' *ngIf='!button'  [ngClass]="{off: true}"> OFF </button>
+  <button (click)='toggle(idx)' *ngIf='button'  [ngClass]="{on: true}"> ON </button>
+</div>
+
+<!--<span *ngIf='!button'  [ngClass]="{off: true}"> OFF</span> <span *ngIf='button'> ON </span>-->
