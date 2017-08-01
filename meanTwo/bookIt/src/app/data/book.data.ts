@@ -1,5 +1,5 @@
-import { Book } from "../book";
-export const BOOKS: Book[] = [
+// import { Book } from "../book";
+export const BOOKS = [
     {
         id: 1,
         title: 'The Hobbit',

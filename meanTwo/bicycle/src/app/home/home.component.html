@@ -1,0 +1,124 @@
+<div class='container'>
+
+<div  *ngIf='bike' class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+     <img src="{{ bike.image }}" alt="Bike image">
+      <div class="caption">
+          <h3>Bike of the day</h3>
+        <p>{{bike.price}}</p>
+        <p>{{bike.year}}</p>
+        <p>{{bike.location}}</p>
+        <p>{{bike.description}}</p>      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <section class="col-md-6">
+  <fieldset>
+    <legend>Register</legend>
+    <form novalidate (ngSubmit)='onSubmit(register.value)' #register='ngForm' class="form-horizontal">
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">First Name</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="firstName" name='firstName' #firstName='ngModel' [(ngModel)]='user.firstName' required minlength="2">
+        </div>
+      </div>
+      <div *ngIf ='(firstName.touched || firstName.dirty) && firstName.errors'>
+            <div *ngIf='firstName.errors.required' class='alert alert-danger'>You must enter a  first name</div>
+            <div *ngIf='firstName.errors.minlength' class='alert alert-danger'>First name must at leaste {{firstName.errors.minlength.requiredLength}} characters. You only have {{firstName.errors.minlength.actualLength}} characters</div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">Last Name</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="lastName" name='lastName' #lastName='ngModel' [(ngModel)]='user.lastName' required minlength="2">
+        </div>
+      </div>
+      <div *ngIf ='(lastName.touched || lastName.dirty) && lastName.errors'>
+            <div *ngIf='lastName.errors.required' class='alert alert-danger'>You must enter a last name</div>
+            <div *ngIf='lastName.errors.minlength' class='alert alert-danger'>Last name must at leaste {{lastName.errors.minlength.requiredLength}} characters. You only have {{lastName.errors.minlength.actualLength}} characters</div>
+        </div>
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">Email</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="email" name='email' #email='ngModel' [(ngModel)]='user.email' required>
+        </div>
+      </div>
+        <div *ngIf ='(email.touched || email.dirty) && email.errors'>
+            <div *ngIf='email.errors.required' class='alert alert-danger'>You must enter an email</div>
+        </div>
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">Password</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="password" name='password' #password='ngModel' [(ngModel)]='user.password' minlength='8' reverse="true" required>
+      </div>
+      </div>
+      <div *ngIf ='(password.touched || password.dirty) && password.errors'>
+              <div *ngIf='password.errors.required' class='alert alert-danger'>You must enter a password</div>
+          </div>
+      <div class="form-group">
+          <label class="col-md-4 control-label">Retype password</label>
+          <div class="col-md-6">
+            <input class="form-control input-md"  type="password" name="confirmPassword" [ngModel]="user.confirmPassword" required validateEqual="password" #confirmPassword="ngModel">
+          </div>
+      </div>
+      <div *ngIf ='(confirmPassword.touched || confirmPassword.dirty) && confirmPassword.errors'>
+              <div *ngIf='confirmPassword.errors.required' class='alert alert-danger'>You must enter a confirm password</div>
+              <div *ngIf='!confirmPassword.valid || confirmPassword.pristine && !register.submitted' class='alert alert-danger'>Password mismatch</div>
+          </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="button1id"></label>
+        <div class="col-md-8">
+          <button *ngIf='register.valid' id="button1id" class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+</section>
+
+<section class="col-md-6">
+  <fieldset>
+    <legend>Login</legend>
+    <form (submit)='onLogin(login.value)' #login='ngForm' class="form-horizontal">
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">Email</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="email" name='email' #username='ngModel' [(ngModel)]='user.email' >
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-md-4 control-label">Password</label>
+        <div class="col-md-6">
+        <input class="form-control input-md" type="password" name='password' #password='ngModel' [(ngModel)]='user.password' minlength='8' >
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="button1id"></label>
+        <div class="col-md-8">
+          <button  *ngIf='login.valid' id="button2id" class="btn btn-success">Login</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+</section>
+</div>
+
+<section class='row'>
+  <div *ngIf='registrationErrors.length' class='col-md-6'>
+  <ul class="alert alert-danger">
+    <li *ngFor='let error of registrationErrors'>{{error}}</li>
+  </ul>
+</div>
+
+<div *ngIf='loginErrors' class='col-md-6'>
+  <ul class="alert alert-danger">
+    <li>{{loginErrors}}</li>
+  </ul>
+</div>
+</section>
+
+
+
+  
+</div>

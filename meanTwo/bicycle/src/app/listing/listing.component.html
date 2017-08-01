@@ -1,0 +1,113 @@
+<div *ngIf='creationErrors.length'>
+  <ul class="alert alert-danger">
+    <li *ngFor='let error of creationErrors'>{{error}}</li>
+  </ul>
+</div>
+<fieldset>
+        <legend>Add a bicycle</legend>
+        <form (ngSubmit)='onSubmit(newBicycle.value)' #newBicycle ='ngForm'>
+            <div class="form-group">          
+                <label for="">Title</label>
+                <input id='title' type="text" class="form-control" name='title' [(ngModel)]='bicycle.title' #title='ngModel' required>
+                <div *ngIf ='(title.touched || title.dirty) && title.errors'>
+                    <div *ngIf='title.errors.required' class='alert alert-danger'>You must enter a bicycle title</div>
+                </div>
+            </div>
+            <div class="form-group">  
+                <label for="">Description</label>
+                <textarea rows="" cols=""  class="form-control" name='description' [(ngModel)]='bicycle.description' #description='ngModel'  maxlength="200" required></textarea>
+                <div *ngIf ='(description.touched || description.dirty) && description.errors'>
+                    <div *ngIf='description.errors.required' class='alert alert-danger'>You must enter a bicycle description </div>
+                </div>
+            </div>
+            <div class="form-group">  
+                <label for="">Year</label>
+                <input id='year' type="number" class="form-control" name='year' [(ngModel)]='bicycle.year' #year='ngModel' required>
+                <div *ngIf ='(year.touched || year.dirty) && year.errors'>
+                    <div *ngIf='year.errors.required' class='alert alert-danger'>You must enter a bicycle year</div>
+                </div>
+            </div>
+            <div class="form-group">                
+                <label for="">Price</label>
+                <input type="number" class="form-control" name='price' [(ngModel)]='bicycle.price' #price='ngModel' required>
+                <div *ngIf ='(price.touched || price.dirty) && price.errors'>
+                    <div *ngIf='price.errors.required' class='alert alert-danger'>You must enter a bicycle price </div>
+                </div>
+            </div>
+            <div class="form-group">                
+                <label for="">Location</label>
+                <input id='pages' type="text" class="form-control" name='location' [(ngModel)]='bicycle.location' #location='ngModel' required>
+                <div *ngIf ='(location.touched || location.dirty) && location.errors'>
+                    <div *ngIf='location.errors.required' class='alert alert-danger'>You must enter a bicycle location </div>
+                </div>
+            </div>
+            <div class="form-group">               
+                <label for="">Image</label>
+                <input id='publisher' type="text" class="form-control" name='image' [(ngModel)]='bicycle.image' #image='ngModel' minlength="3" required>
+                <div *ngIf ='(image.touched || image.dirty) && image.errors'>
+                    <div *ngIf='image.errors.required' class='alert alert-danger'>You must enter a bicycle image </div>
+                </div>
+            </div>
+            <button  [disabled]=newBicycle.invalid [hidden]='newBicycle.invalid' class="btn btn-md btn-success">Submit</button>
+        </form>
+    </fieldset>
+
+<section *ngIf='bicycles' >
+  <div   *ngFor='let bicycle of bicycles'>
+  <fieldset>
+        <legend>Add a bicycle</legend>
+          
+         <img src="{{ bicycle.image }}" alt="Bike image">
+        <form (ngSubmit)='onUpdate(updatedBicycle.value)' #updatedBicycle ='ngForm'>
+            <input type="hidden"  name='_id' [ngModel]='bicycle._id'>
+            <div class="form-group">          
+                <label for="">Title</label>
+                <input id='title' type="text" class="form-control" name='title' [(ngModel)]='bicycle.title' #title='ngModel' required>
+                <div *ngIf ='(title.touched || title.dirty) && title.errors'>
+                    <div *ngIf='title.errors.required' class='alert alert-danger'>You must enter a bicycle title</div>
+                </div>
+            </div>
+            <div class="form-group">  
+                <label for="">Description</label>
+                <textarea rows="" cols=""  class="form-control" name='description' [(ngModel)]='bicycle.description' #description='ngModel'  maxlength="200" required></textarea>
+                <div *ngIf ='(description.touched || description.dirty) && description.errors'>
+                    <div *ngIf='description.errors.required' class='alert alert-danger'>You must enter a bicycle description </div>
+                </div>
+            </div>
+            <div class="form-group">  
+                <label for="">Year</label>
+                <input id='year' type="number" class="form-control" name='year' [(ngModel)]='bicycle.year' #year='ngModel' required>
+                <div *ngIf ='(year.touched || year.dirty) && year.errors'>
+                    <div *ngIf='year.errors.required' class='alert alert-danger'>You must enter a bicycle year</div>
+                </div>
+            </div>
+            <div class="form-group">                
+                <label for="">Price</label>
+                <input type="number" class="form-control" name='price' [(ngModel)]='bicycle.price' #price='ngModel' required>
+                <div *ngIf ='(price.touched || price.dirty) && price.errors'>
+                    <div *ngIf='price.errors.required' class='alert alert-danger'>You must enter a bicycle price </div>
+                </div>
+            </div>
+            <div class="form-group">                
+                <label for="">Location</label>
+                <input id='pages' type="text" class="form-control" name='location' [(ngModel)]='bicycle.location' #location='ngModel' required>
+                <div *ngIf ='(location.touched || location.dirty) && location.errors'>
+                    <div *ngIf='location.errors.required' class='alert alert-danger'>You must enter a bicycle location </div>
+                </div>
+            </div>
+            <div class="form-group">               
+                <label for="">Image</label>
+                <input id='publisher' type="text" class="form-control" name='image' [(ngModel)]='bicycle.image' #image='ngModel' minlength="3" required>
+                <div *ngIf ='(image.touched || image.dirty) && image.errors'>
+                    <div *ngIf='image.errors.required' class='alert alert-danger'>You must enter a bicycle image </div>
+                </div>
+            </div>
+            <button  [disabled]=updatedBicycle.invalid [hidden]='updatedBicycle.invalid' class="btn btn-md btn-success">Update</button>
+           
+        </form>
+        <button class='btn btn-danger btn-sm' (click)='deleteBike(bicycle)'>Delete Bicycle</button>
+      </fieldset>
+      
+    </div>
+  </section>
+

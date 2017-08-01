@@ -1,13 +1,11 @@
+import { Author } from "./author";
+
 export class Book {
-    id: number;
+    _id: string;
     title: string;
     year: number;
     pages: number;
-    author: string;
+    author: Author;
     publisher: string;
-
-    constructor() {
-        this.id = Math.floor(Math.random() * 1000);
-    }
 
 }

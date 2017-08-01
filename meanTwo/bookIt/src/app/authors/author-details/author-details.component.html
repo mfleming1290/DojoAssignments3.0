@@ -1,0 +1,10 @@
+<div *ngIf='author'>
+  <h3>Books written by {{ author.name }}</h3>
+  <ul class="list-group" *ngFor='let book of author.books'>
+    <li class="list-group-item"><h4>{{book.title}}</h4></li>
+    <li class="list-group-item">Publisher: {{book.publisher}}</li>
+    <li class="list-group-item">Pages: {{book.pages}}</li>
+    <li class="list-group-item">Year: {{book.year}}</li>
+  </ul>
+</div>
+

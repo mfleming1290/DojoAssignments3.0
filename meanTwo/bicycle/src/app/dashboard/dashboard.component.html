@@ -1,0 +1,14 @@
+<h1>Bicycle Marketplace</h1>
+<nav>
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a routerLink='/dashboard/browse'>Browse</a></li>
+      <li><a routerLink='/dashboard/listing'>My Listing</a></li>
+      <li *ngIf='isAuthed()'>
+          <button (click)='logout()'>Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+

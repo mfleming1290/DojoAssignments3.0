@@ -1,6 +1,6 @@
 <fieldset>
         <legend>Add a Book</legend>
-        <form (ngSubmit)='onSubmit() || newBook.reset()' #newBook ='ngForm'>
+        <form (ngSubmit)='onSubmit(newBook)' #newBook ='ngForm'>
             <div class="form-group">          
                 <label for="">Title</label>
                 <input id='title' type="text" class="form-control" name='title' [(ngModel)]='book.title' #title='ngModel' minlength="3" required>
@@ -11,7 +11,10 @@
             </div>
             <div class="form-group">
                 <label for="">Author</label>
-                <input id='author' type="text" class="form-control" name='author' [(ngModel)]='book.author' #author='ngModel' required>
+                <!--<input id='author' type="text" class="form-control" name='author' [(ngModel)]='book.author' #author='ngModel' required>-->
+                <select name='author' [(ngModel)]='book.author'>
+                    <option [value]="author._id" *ngFor='let author of authors'>{{author.name}}</option>
+                </select>
             </div>
             <div class="form-group">  
                 <label for="">Year</label>
@@ -29,6 +32,6 @@
                     <div *ngIf='publisher.errors.minlength' class='alert alert-danger'>Publisher must at leaste {{publisher.errors.minlength.requiredLength}} characters. You only have {{publisher.errors.minlength.actualLength}} characters</div>
                 </div>
             </div>
-            <button [disabled]=newBook.invalid [hidden]='newBook.invalid' class="btn btn-md btn-success">Submit</button>
+            <button  [disabled]=newBook.invalid [hidden]='newBook.invalid' class="btn btn-md btn-success">Submit</button>
         </form>
     </fieldset>

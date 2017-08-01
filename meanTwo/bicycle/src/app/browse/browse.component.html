@@ -1,0 +1,14 @@
+    <div>
+      <input type="text" [(ngModel)]='filter.title' placeholder='Title'>
+      <div *ngFor='let bike of bicycles | search:filter'>
+        <p>{{bike.title}}</p>
+        <p>{{bike.price}}</p>
+        <p>{{bike.year}}</p>
+        <p>{{bike.location}}</p>
+        <p>{{bike.description}}</p>
+        <p><img src="{{ bike.image }}" alt="Bike image"></p>
+        <p *ngIf='bike.postedBy._id === userId' ><button (click)='deleteBicycle(bike)'>Delete</button></p>
+        <p *ngIf='bike.postedBy._id !== userId'><button (click)='contact(bike.postedBy.email, bike.postedBy.firstName)'>Contact</button></p>
+      </div>
+    </div>
+    
