@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app"></div>
+        <div id="root"></div>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        
+
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+        <script>
+                // ReactDOM.render(element, document.getElementById('app'));
+                const hello = React.createElement('h1', null, 'Hello Dojo' );
+                const things = React.createElement('h2', null, 'Things I need to do:' );
+                const one = React.createElement('li', null, 'Learn React' );
+                const two = React.createElement('li', null, 'Climb Mt Everest' );
+                const three = React.createElement('li', null, 'Run a Marathon' );
+                const four = React.createElement('li', null, 'Feed the dogs' );
+
+                ReactDOM.render(hello, document.getElementById('app'));
+                ReactDOM.render(things, document.getElementById('root'));
+                ReactDOM.render(one, document.getElementById('one'));
+                ReactDOM.render(two, document.getElementById('two'));
+                ReactDOM.render(three, document.getElementById('three'));
+                ReactDOM.render(four, document.getElementById('four'));
+
+                
+
+
+
+        </script>
+    
+    </body>
+</html>

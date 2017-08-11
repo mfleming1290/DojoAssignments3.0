@@ -3,6 +3,10 @@ import { Book } from '../book';
 import { TitleizePipe } from "../titleize.pipe";
 import { BookService } from "../services/book.service";
 import { SearchPipe } from "../search.pipe";
+import { PagerService } from '../services/pager.service'
+import { Router } from "@angular/router";
+import { BookFindService } from "../services/book-find.service";
+
 // import { BOOKS } from "../data/book.data";
 
 @Component({
@@ -19,13 +23,63 @@ export class BookListComponent implements OnInit {
     selectedBook: Book;
 
     filter: Book = new Book();
+
+    // array of all items to be paged
+    private allItems: any[];
+ 
+    // pager object
+    pager: any = {};
+ 
+    // paged items
+    pagedItems: Book[];
+
+    // searchbook = [];
+    foundBooks
+ 
+        
     
-    constructor(private titleize: TitleizePipe, private bookService: BookService) {
+    constructor(private bookFindService: BookFindService, private router: Router, private pagerService: PagerService, private titleize: TitleizePipe, private bookService: BookService) {
        
     }
 
+    searchBook() {
+        this.bookFindService.getBook()
+        .subscribe(books => {
+            this.foundBooks = books
+        })
+  
+    }
+
+    
+    
     ngOnInit() {
         this.getBooks();
+        this.getPages()
+    }
+
+    getPages() {
+        this.bookService.getPage()
+        .then(data => {
+            console.log('getting pages from the server');
+            this.allItems = data;
+ 
+                // initialize to page 1
+                this.setPage(1);
+        })
+        .then(() => this.titleCaseAuthors())
+        .catch(console.log)
+    }
+
+    setPage(page: number) {
+        if (page < 1 || page > this.pager.totalPages) {
+            return;
+        }
+ 
+        // get pager object from service
+        this.pager = this.pagerService.getPager(this.allItems.length, page);
+ 
+        // get current page of items
+        this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
     }
 
     getBooks() {
@@ -59,12 +113,9 @@ export class BookListComponent implements OnInit {
     }
 
     deleteBook(book: Book) {
-        console.log('in del book ', book, book._id);
-        // const idx = this.books.indexOf(book);
-        // this.books.splice(idx, 1);        
+        console.log('in del book ', book, book._id);     
         this.bookService.removeBook(book._id)
-        .then(() => this.books.splice(this.books.indexOf(book, 1)))
-        // .then(() => this.selectBook(book))
+        .then(() => this.router.navigate(['/books/new']))
         .catch(console.log)
         
     }

@@ -10,7 +10,8 @@ import { AuthorNewComponent } from "./authors/author-new/author-new.component";
 import { AuthorDetailsComponent } from "./authors/author-details/author-details.component";
 import { DetailsAuthorComponent } from "./authors/details-author/details-author.component";
 import { HomeComponent } from "./home/home.component";
-
+import { BookSearchComponent } from "./book-search/book-search.component";
+import { SearchDetailsComponent } from "./search-details/search-details.component";
 import {AuthGuard } from './auth.guard'
 
 
@@ -49,6 +50,14 @@ const routes: Routes = [
         path: 'books/new',
         component: NewBookComponent,
         canActivate: [AuthGuard]
+    },
+    {
+        path: 'books/search',
+        component: BookSearchComponent
+    },
+    {
+        path: 'books/search/:id',
+        component: SearchDetailsComponent
     },
     {
         path: 'books/:id',

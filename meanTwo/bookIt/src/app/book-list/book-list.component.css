@@ -14,3 +14,24 @@ input.ng-invalid.ng-touched:focus {
     background-color: gray !important;
     color: white;
 }
+
+.white {
+    background-color: #fff;
+    
+}
+
+/*td {
+    background-color: #605C4E;
+}*/
+
+#bl {
+    background-color: #2E294E;
+}
+
+h1 {
+        color: white;
+        margin-top: 0;
+        /*font-family: "Roboto Condensed", sans-serif;*/
+
+    
+}

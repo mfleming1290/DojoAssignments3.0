@@ -31,6 +31,7 @@ require('./server/config/database');
 app.use('/api/books', require('./server/config/routes/book.routes'));
 app.use('/api/author', require('./server/config/routes/author.routes'));
 app.use('/api/auth', require('./server/config/routes/auth.routes'));
+app.use('/api/bookFind', require('./server/config/routes/bookFind.routes'));
 
 
 app.use(require('./server/config/routes/catch-all.routes'));

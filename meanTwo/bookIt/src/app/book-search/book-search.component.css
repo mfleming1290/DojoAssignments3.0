@@ -1,0 +1,21 @@
+.content {
+    background-color: #2E294E;
+}
+
+.blue {
+    background-color: #011638;
+    
+}
+
+.grey {
+    background-color: #2E294E;
+}
+
+.white {
+    color: white;
+}
+
+.search-content {
+    padding: 20px;
+    border-bottom: 2px solid black;
+}

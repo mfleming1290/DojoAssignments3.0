@@ -59,7 +59,15 @@ module.exports = {
 				console.log("post 19", err)
 			else
 				res.json(data)
-		}).populate({path: 'comments', populate : {path: 'user_id' }})
+		})
+        .populate('user_id')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'user_id',
+                model: 'User'
+            }
+        })
 	},
 
 };

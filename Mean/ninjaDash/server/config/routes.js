@@ -2,7 +2,7 @@ const ninjaController = require('../controllers/ninjas');
 const authController = require('../controllers/auth');
 const beltController = require('../controllers/belts');
 
-const loggedIn = require('../modules/isLoggedIn')
+// const loggedIn = require('../modules/isLoggedIn')
 
 module.exports = function(app) {
     console.log('routes');

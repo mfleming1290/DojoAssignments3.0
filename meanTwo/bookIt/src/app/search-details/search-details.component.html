@@ -1,0 +1,46 @@
+<section id="bl">
+    <div *ngIf='book'>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{ book[0].thumbnail }}" alt="">
+          <h3>{{book[0].title}}</h3>
+        </div>
+        <div class="col-md-4">
+          <div>
+            <h3>Author: </h3>
+            <p>{{book[0].authors }}</p>
+          </div>
+          <div>
+            <h3>Publisher: </h3>
+            <p>{{book[0].publisher }}</p>
+          </div>
+          <div>
+          <h3>Publish Date: </h3>
+          <p>{{book[0].publishedDate }}</p>
+          </div>
+          <div>
+          <h3>Page Count: </h3>
+          <p>{{ book[0].pageCount }}</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3>Description: </h3>
+          <p>{{book[0].description }}</p>
+        </div>
+      </div>
+    </div>
+      <div *ngIf='book'>
+        <form (ngSubmit)='onSubmit(newBook.value)' #newBook ='ngForm'>
+                <input id='title' type="hidden"  name='title' [(ngModel)]='book[0].title' #title='ngModel'>
+                <input id='year' type="hidden"  name='author' [(ngModel)]='book[0].authors[0]' #author='ngModel'>                
+                <input id='year' type="hidden" class="form-control" name='year' [(ngModel)]='book[0].publishedDate' #year='ngModel'>
+                <input id='pages' type="hidden" class="form-control" name='pages' [(ngModel)]='book[0].pageCount' #pages='ngModel'>
+                <input id='publisher' type="hidden" class="form-control" name='publisher' [(ngModel)]='book[0].publisher' #publisher='ngModel'>
+            <button  [disabled]=newBook.invalid [hidden]='newBook.invalid' class="btn btn-md btn-success">Add Book</button>
+        </form>
+    <!--<button class="btn btn-success" (click)='addBook(book)'>Add Book</button>-->
+
+      </div>  
+      </div>
+</section>

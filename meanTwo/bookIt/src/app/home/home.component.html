@@ -1,4 +1,5 @@
-<div *ngIf='registrationErrors.length'>
+<div class="container">
+  <div *ngIf='registrationErrors.length'>
   <ul class="alert alert-danger">
     <li *ngFor='let error of registrationErrors'>{{error}}</li>
   </ul>
@@ -42,3 +43,4 @@
     </form>
   </fieldset>
 </section>
+</div>

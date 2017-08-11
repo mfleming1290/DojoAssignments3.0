@@ -3,12 +3,13 @@ import { Http } from "@angular/http";
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/toPromise'
 import { Book } from '../book' 
+import { PagerService } from "../services/pager.service";
 
 @Injectable()
 export class BookService {
   // public static base = 'http://59498bce6d49df0011102cfc.mockapi.io/books'
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http, private pagerService: PagerService) { }
 
   getBooks(): Promise<Book[]> {
     console.log('in books');
@@ -37,6 +38,19 @@ export class BookService {
 
   updateBook(book: Book): Promise<Book> {
     return this._http.put(`/api/books/${ book._id } `, book)
+    .map(data => data.json())
+    .toPromise()
+  }
+
+  getPage() {
+    console.log('in page');
+    return this._http.get('/api/books')
+    .map(data => data.json())
+    .toPromise();
+  }
+
+  addSearchBook(book: Book): Promise<Book> {
+    return this._http.post('/api/books/add', book)
     .map(data => data.json())
     .toPromise()
   }

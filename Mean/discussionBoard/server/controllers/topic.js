@@ -29,7 +29,17 @@ module.exports = {
     show(req, res) {
         console.log('inside controller');
         Topic.findById(req.params.id)
-        .populate('user_id')
+        .populate({
+            path: 'answers',
+            populate: {
+                path: 'comments',
+                model: 'Comment',
+                populate: {
+                    path: 'user_id',
+                    model: 'User'
+                }
+            }
+        })
         .then(function(topic) {
             console.log(topic);
             res.json(topic);

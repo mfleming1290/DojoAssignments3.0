@@ -1,8 +1,8 @@
 <fieldset>
-        <legend>Add a Book</legend>
+        <legend class="white text-center">Add a Book</legend>
         <form (ngSubmit)='onSubmit(newBook)' #newBook ='ngForm'>
             <div class="form-group">          
-                <label for="">Title</label>
+                <label for="" class="white">Title</label>
                 <input id='title' type="text" class="form-control" name='title' [(ngModel)]='book.title' #title='ngModel' minlength="3" required>
                 <div *ngIf ='(title.touched || title.dirty) && title.errors'>
                     <div *ngIf='title.errors.required' class='alert alert-danger'>You must enter a book title</div>
@@ -10,22 +10,22 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Author</label>
+                <label for="" class="white">Author</label>
                 <!--<input id='author' type="text" class="form-control" name='author' [(ngModel)]='book.author' #author='ngModel' required>-->
                 <select name='author' [(ngModel)]='book.author'>
                     <option [value]="author._id" *ngFor='let author of authors'>{{author.name}}</option>
                 </select>
             </div>
             <div class="form-group">  
-                <label for="">Year</label>
+                <label for="" class="white">Year</label>
                 <input id='year' type="number" class="form-control" name='year' [(ngModel)]='book.year' #year='ngModel' required>
             </div>
             <div class="form-group">                
-                <label for="">Pages</label>
+                <label for="" class="white">Pages</label>
                 <input id='pages' type="number" class="form-control" name='pages' [(ngModel)]='book.pages' #pages='ngModel' required>
             </div>
             <div class="form-group">               
-                <label for="">Publisher</label>
+                <label for="" class="white">Publisher</label>
                 <input id='publisher' type="text" class="form-control" name='publisher' [(ngModel)]='book.publisher' #publisher='ngModel' minlength="3" required>
                 <div *ngIf ='(publisher.touched || publisher.dirty) && publisher.errors'>
                     <div *ngIf='publisher.errors.required' class='alert alert-danger'>You must enter a book publisher </div>

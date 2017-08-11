@@ -23,7 +23,10 @@ import { DetailsAuthorComponent } from './authors/details-author/details-author.
 import { AuthService } from "./services/auth.service";
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from "./auth.guard";
-// TitleizePipe.skipWords = ['of'];
+import { PagerService } from "./services/pager.service";
+import { BookFindService } from "./services/book-find.service";
+import { BookSearchComponent } from './book-search/book-search.component';
+import { SearchDetailsComponent } from './search-details/search-details.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,8 @@ import { AuthGuard } from "./auth.guard";
     AuthorDetailsComponent,
     DetailsAuthorComponent,
     HomeComponent,
+    BookSearchComponent,
+    SearchDetailsComponent,
 
   ],
   imports: [
@@ -49,7 +54,7 @@ import { AuthGuard } from "./auth.guard";
     AppRoutingModule,
     CookieModule.forRoot(),
   ],
-  providers: [BookService, AuthorService, AuthService, AuthGuard],
+  providers: [BookFindService, BookService, AuthorService, AuthService, AuthGuard, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

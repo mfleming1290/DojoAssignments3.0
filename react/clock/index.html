@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+        <script>
+            function tick() {
+                let time = new Date().toLocaleTimeString();
+                const myButton = React.createElement('div', null, time );
+                ReactDOM.render(myButton, document.getElementById('app'));
+            }
+               setInterval(tick, 1000); 
+        </script>
+    </body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    var nIntervId;
+ 
+    function startClock() {
+        nIntervId = setInterval(myCallback, 1000);
+    }
+    function myCallback() {
+        return  document.getElementById('time').innerHTML =  new Date().toString()
+    }
+
+</script>
+    </head>
+    <body onload="startClock();">
+        <p>The current time is: <span id="time"></span></p>
+
+    
+    </body>
+</html>-->

@@ -1,0 +1,20 @@
+nav {
+    padding-bottom: 10px;
+    background-color: #614655;
+    border-color: #614655;
+    
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.white {
+        color: white;
+
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+    font-size: 20px;
+}
