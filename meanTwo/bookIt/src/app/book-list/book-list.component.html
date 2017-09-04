@@ -1,99 +1,57 @@
-<!--<app-new-book (sendBook)='dataFromNewBook($event)'></app-new-book>-->
-<!--<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-                <input type="text" [(ngModel)]='filter.title' placeholder='Title'>
-            </th>
-            <th>
-                <input type="number" [(ngModel)]='filter.year' placeholder='Year'>
-            </th>
-            <th>
-                <input type="text" [(ngModel)]='filter.author' placeholder='Author'>
-
-            </th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr [routerLink]="['/books', book._id]" *ngFor = 'let book of books | search:filter' (click)='selectBook(book)' [class.selected]='selectedBook === book'>
-            <td>{{book.title | titleize}}</td>
-            <td>{{book.year}}</td>
-            <td>{{book.author.name}}</td>
-            <td (click)='tdClick($event)'> <button class='btn btn-danger btn-sm' (click)='deleteBook(book)'>Delete Book</button></td>
-        </tr>
-    </tbody>
-</table>-->
 <section id="bl">
-    <div>
-    <div class="vertical-container">
-        <div class="text-center">
-            <h1>Books</h1>
- 
-            <!-- items being paged -->
-            <!--<div *ngFor="let item of pagedItems">{{item.title}}</div>-->
-            <table class="table table-striped white">
-                <thead>
-                    <tr>
-                        <th class="text-center">
-                            <input type="text" [(ngModel)]='filter.title' placeholder='Title'>
-                        </th>
-                        <th class="text-center">
-                            <input type="number" [(ngModel)]='filter.year' placeholder='Year'>
-                        </th>
-                        <th class="text-center">Author</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr [routerLink]="['/books', book._id]" *ngFor = 'let book of pagedItems | search:filter' (click)='selectBook(book)' [class.selected]='selectedBook === book'>
-                        <td>{{book.title | titleize}}</td>
-                        <td>{{book.year}}</td>
-                        <td>{{book.author.name}}</td>
-                        <td (click)='tdClick($event)'> <button class='btn btn-danger btn-sm' (click)='deleteBook(book)'>Delete Book</button></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- pager -->
-            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
-                    <a (click)="setPage(1)">First</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
-                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-                </li>
-                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                    <a (click)="setPage(page)">{{page}}</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                    <a (click)="setPage(pager.totalPages)">Last</a>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="list">
+                    <div id="no-more-tables" class="text-center">
+                        <h1>Books</h1>
+            
+                        <!-- items being paged -->
+                        <!--<div *ngFor="let item of pagedItems">{{item.title}}</div>-->
+                        <table class="table table-striped table-responsive col-md-12 table-bordered table-condensed white">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        <input type="text" [(ngModel)]='filter.title' placeholder='Title'>
+                                    </th>
+                                    <th class="text-center">
+                                        <input type="number" [(ngModel)]='filter.year' placeholder='Year'>
+                                    </th>
+                                    <th class="text-center">Author</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr [routerLink]="['/books', book._id]" *ngFor = 'let book of pagedItems | search:filter' (click)='selectBook(book)' [class.selected]='selectedBook === book'>
+                                    <td>{{book.title | titleize}}</td>
+                                    <td>{{book.year}}</td>
+                                    <td>{{book.author.name}}</td>
+                                    <td (click)='tdClick($event)'> <button class='btn btn-danger btn-sm' (click)='deleteBook(book)'>Delete Book</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- pager -->
+                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a (click)="setPage(1)">First</a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                <a (click)="setPage(page)">{{page}}</a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a (click)="setPage(pager.totalPages)">Last</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<button (click)="searchBook()" >search</button>
-<div *ngIf='foundBooks'>
-    <div class="container white">
-        <!--{{searchbook | json}}-->
-        <!--{{searchbook.title | json}}-->
-        <div *ngFor="let book of foundBooks">
-            {{ book.title }}
-            <!--<p>{{ book.title }}</p>
-            <p>{{ book.authors[0] }}</p>
-            <p>{{ book.description }}</p>
-            <p>{{ book.pageCount }}</p>
-            <p>{{ book.publishedDate }}</p>
-            <p>{{ book.publisher }}</p>-->
-        </div>
-        
-        
-    </div>
-    
-</div>
 </section>
  

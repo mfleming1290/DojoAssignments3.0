@@ -13,7 +13,9 @@ import { HomeComponent } from "./home/home.component";
 import { BookSearchComponent } from "./book-search/book-search.component";
 import { SearchDetailsComponent } from "./search-details/search-details.component";
 import {AuthGuard } from './auth.guard'
-
+import { GameListComponent } from "./games/game-list/game-list.component";
+import { GameSearchComponent } from "./games/game-search/game-search.component";
+import { GameDetailsComponent } from "./games/game-details/game-details.component";
 
 const routes: Routes = [
     {
@@ -62,6 +64,23 @@ const routes: Routes = [
     {
         path: 'books/:id',
         component: BookDetailsComponent
+    },
+    {
+        path: 'games',
+        children: [
+            {
+                path: '',
+                component: GameListComponent
+            },
+            {
+                path: 'search',
+                component: GameSearchComponent
+            },
+            {
+                path: 'search/:id',
+                component: GameDetailsComponent
+            },
+        ]
     },
      
     {

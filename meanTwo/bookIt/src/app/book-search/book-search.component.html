@@ -1,30 +1,33 @@
- <section class="blue">
- <fieldset>
-    <legend class="white text-center">Search for a book</legend>
-    <form (ngSubmit)='onSubmit(searchForm.value)' #searchForm='ngForm' class="form-group">
-      <div class="form-group">
-        <label for="" class="white">Title: </label>
-        <input class="form-control" type="text" name='title' [ngModel]='search.title'>
-      </div>
-      <button>Search Title</button>
-    </form>
-  </fieldset>
-
-<div *ngIf='foundBooks'>
-    <div class="container grey">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <div class="white search-content" *ngFor="let book of foundBooks">
-              <img src="{{ book.thumbnail }}" alt="">
-              <p>Title: {{ book.title }}</p>
-              <p>Author: {{ book.authors }}</p>
-              <button class='btn btn-sm' (click)='findBook(book)'>Details</button>
+ <section class="bl">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+          <fieldset>
+          <legend class="white text-center">Search for a book</legend>
+          <form (ngSubmit)='onSubmit(searchForm.value)' #searchForm='ngForm' class="form-group">
+            <div class="form-group">
+              <label for="" class="white">Title: </label>
+              <input class="form-control" type="text" name='title' [ngModel]='search.title'>
             </div>
+            <button>Search Title</button>
+          </form>
+        </fieldset>
+
+      <div *ngIf='foundBooks'>
+          <div class="container grey">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <div class="white inline search-content" *ngFor="let book of foundBooks">
+                    <img src="{{ book.thumbnail }}" alt="">
+                    <p>Title: {{ book.title }}</p>
+                    <p>Author: {{ book.authors }}</p>
+                    <button class='btn btn-sm' (click)='findBook(book)'>Details</button>
+                  </div>
+                </div>
+              </div>            
           </div>
-        </div>
-        
-        
+      </div>
+      </div>
     </div>
-    
-</div>
+  </div>
 </section>

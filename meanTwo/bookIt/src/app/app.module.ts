@@ -27,6 +27,12 @@ import { PagerService } from "./services/pager.service";
 import { BookFindService } from "./services/book-find.service";
 import { BookSearchComponent } from './book-search/book-search.component';
 import { SearchDetailsComponent } from './search-details/search-details.component';
+import { FooterComponent } from './footer/footer.component';
+import { GameListComponent } from './games/game-list/game-list.component';
+import { GameSearchComponent } from './games/game-search/game-search.component';
+import { GameFindService } from "./services/game-find.service";
+import { GameDetailsComponent } from './games/game-details/game-details.component';
+import { GameService } from "./services/game.service";
 
 @NgModule({
   declarations: [
@@ -45,6 +51,10 @@ import { SearchDetailsComponent } from './search-details/search-details.componen
     HomeComponent,
     BookSearchComponent,
     SearchDetailsComponent,
+    FooterComponent,
+    GameListComponent,
+    GameSearchComponent,
+    GameDetailsComponent,
 
   ],
   imports: [
@@ -54,7 +64,7 @@ import { SearchDetailsComponent } from './search-details/search-details.componen
     AppRoutingModule,
     CookieModule.forRoot(),
   ],
-  providers: [BookFindService, BookService, AuthorService, AuthService, AuthGuard, PagerService],
+  providers: [GameFindService, BookFindService, BookService, AuthorService, AuthService, AuthGuard, PagerService, GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

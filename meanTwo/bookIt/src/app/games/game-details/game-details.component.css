@@ -1,0 +1,7 @@
+section {
+    margin-top: 100px;
+}
+
+ img, .img-block {
+     display: inline-block;
+ }

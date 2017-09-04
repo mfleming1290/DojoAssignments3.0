@@ -1,0 +1,31 @@
+<section>
+  <fieldset>
+          <legend class="white text-center">Search for a game</legend>
+          <form (ngSubmit)='onSubmit(searchForm.value)' #searchForm='ngForm' class="form-group">
+            <div class="form-group">
+              <label for="" class="white">Name: </label>
+              <input class="form-control" type="text" name='title' [ngModel]='search.title'>
+            </div>
+            <button>Search Game</button>
+          </form>
+        </fieldset>
+  
+</section>
+<div *ngIf='foundGames'>
+          <div class="container grey">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <div class="white inline search-content" *ngFor="let game of hack(foundGames)">
+                    <div *ngIf='game.cover'> <img src="http:{{ game.cover.url }}" alt="game cover image"> </div>
+                      <h3>{{game.name}}</h3>
+                    <button class='btn btn-sm' (click)='findGame(game)'>Details</button>
+                  </div>
+                </div>
+              </div>            
+          </div>
+      </div>
+  
+  
+
+
+        
